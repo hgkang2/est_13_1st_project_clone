@@ -167,4 +167,23 @@
     font-weight: var(--weight-regular);
   }
   /* 링크버튼 */
+
+  /* ─── 컨테이너 (Container) ──────────────────────────────── */
+
+  .container {
+    max-width: var(--container-max);
+    margin-inline: auto;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      max-width: 688px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .container {
+      max-width: 328px;
+    }
+  }
 }
