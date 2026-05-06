@@ -109,81 +109,84 @@
   --radius-l: 12px;
   --radius-xl: 16px;
   --radius-full: 9999px;
+}
 
-  /* 타이포그래피 */
-  .text-heading-3xl {
-    font-family: var(--font-primary);
-    font-size: var(--text-heading-3xl);
-    line-height: var(--leading-heading-3xl);
-    font-weight: var(--weight-bold);
-  }
-  .text-heading-2xl {
-    font-family: var(--font-primary);
-    font-size: var(--text-heading-2xl);
-    line-height: var(--leading-heading-2xl);
-    font-weight: var(--weight-bold);
-    letter-spacing: var(--tracking-heading-2xl);
-  }
-  .text-heading-xl {
-    font-family: var(--font-primary);
-    font-size: var(--text-heading-xl);
-    line-height: var(--leading-heading-xl);
-    font-weight: var(--weight-bold);
-  }
-  .text-heading-l {
-    font-family: var(--font-primary);
-    font-size: var(--text-heading-l);
-    line-height: var(--leading-heading-l);
-    font-weight: var(--weight-medium);
-  }
-  .text-body-2xl {
-    font-family: var(--font-primary);
-    font-size: var(--text-body-2xl);
-    line-height: var(--leading-body-2xl);
-    font-weight: var(--weight-bold);
-  }
-  .text-body-xl {
-    font-family: var(--font-primary);
-    font-size: var(--text-body-xl);
-    line-height: var(--leading-body-xl);
-    font-weight: var(--weight-bold);
-  }
-  .text-body-l {
-    font-family: var(--font-primary);
-    font-size: var(--text-body-l);
-    line-height: var(--leading-body-l);
-    font-weight: var(--weight-regular);
-  }
-  .text-body-m {
-    font-family: var(--font-primary);
-    font-size: var(--text-body-m);
-    line-height: var(--leading-body-m);
-    font-weight: var(--weight-regular);
-  }
-  .text-body-s {
-    font-family: var(--font-primary);
-    font-size: var(--text-body-s);
-    line-height: var(--leading-body-s);
-    font-weight: var(--weight-regular);
-  }
-  /* 링크버튼 */
+/* 타이포그래피 */
+body {
+  font-family: var(--font-primary);
+}
+.text-heading-3xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-heading-3xl);
+  line-height: var(--leading-heading-3xl);
+  font-weight: var(--weight-bold);
+}
+.text-heading-2xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-heading-2xl);
+  line-height: var(--leading-heading-2xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: var(--tracking-heading-2xl);
+}
+.text-heading-xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-heading-xl);
+  line-height: var(--leading-heading-xl);
+  font-weight: var(--weight-bold);
+}
+.text-heading-l {
+  font-family: var(--font-primary);
+  font-size: var(--text-heading-l);
+  line-height: var(--leading-heading-l);
+  font-weight: var(--weight-medium);
+}
+.text-body-2xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-body-2xl);
+  line-height: var(--leading-body-2xl);
+  font-weight: var(--weight-bold);
+}
+.text-body-xl {
+  font-family: var(--font-primary);
+  font-size: var(--text-body-xl);
+  line-height: var(--leading-body-xl);
+  font-weight: var(--weight-bold);
+}
+.text-body-l {
+  font-family: var(--font-primary);
+  font-size: var(--text-body-l);
+  line-height: var(--leading-body-l);
+  font-weight: var(--weight-regular);
+}
+.text-body-m {
+  font-family: var(--font-primary);
+  font-size: var(--text-body-m);
+  line-height: var(--leading-body-m);
+  font-weight: var(--weight-regular);
+}
+.text-body-s {
+  font-family: var(--font-primary);
+  font-size: var(--text-body-s);
+  line-height: var(--leading-body-s);
+  font-weight: var(--weight-regular);
+}
+/* 링크버튼 */
 
-  /* ─── 컨테이너 (Container) ──────────────────────────────── */
+/* ─── 컨테이너 (Container) ──────────────────────────────── */
 
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+@media (max-width: 768px) {
   .container {
-    max-width: var(--container-max);
-    margin-inline: auto;
+    max-width: 688px;
   }
+}
 
-  @media (max-width: 768px) {
-    .container {
-      max-width: 688px;
-    }
-  }
-
-  @media (max-width: 360px) {
-    .container {
-      max-width: 328px;
-    }
+@media (max-width: 360px) {
+  .container {
+    max-width: 328px;
   }
 }
