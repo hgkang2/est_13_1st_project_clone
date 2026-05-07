@@ -61,20 +61,20 @@
 /* ─── 컨테이너 (Container) ──────────────────────────────── */
 
 .container {
-  max-width: var(--container-max);
   width: 100%;
+  max-width: var(--container-max);
 }
 
 @media (max-width: 768px) {
   .container {
-    max-width: var(--container-tablet);
     padding: calc(var(--base-unit) * 2) 0;
+    max-width: var(--container-tablet);
   }
 }
 
 @media (max-width: 360px) {
   .container {
-    max-width: 328px;
     padding: var(--base-unit) 0;
+    max-width: 328px;
   }
 }
