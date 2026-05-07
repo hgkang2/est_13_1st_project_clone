@@ -138,9 +138,9 @@ summary::-webkit-details-marker {
 }
 
 summary::after {
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   transition: transform 0.3s;
-  content: '\e313';
+  content: "\e313";
 }
 
 details[open] summary::after {
@@ -186,7 +186,7 @@ details[open] summary::after {
   width: 0.375rem;
   height: 0.375rem;
   background-color: var(--color-primary);
-  content: '';
+  content: "";
   border-radius: 50%;
 }
 
@@ -300,7 +300,7 @@ details[open] summary::after {
   width: 0.75rem;
   height: 0.75rem;
   background-color: #ccc;
-  content: ' ';
+  content: " ";
   border-radius: 50%;
 }
 
@@ -345,7 +345,7 @@ details[open] summary::after {
   width: 40px;
   height: 40px;
   background-color: var(--color-white);
-  font-family: 'Material Icons';
+  font-family: "Material Icons";
   border-radius: 50%;
 }
 
@@ -360,14 +360,14 @@ details[open] summary::after {
 }
 
 .curriculum__track::scroll-button(left) {
-  content: '\e2ea';
+  content: "\e2ea";
   position-area: center left;
   position-anchor: --first-dot;
   transform: translateX(-1.5rem);
 }
 
 .curriculum__track::scroll-button(right) {
-  content: '\e5e1';
+  content: "\e5e1";
   position-area: center right;
   position-anchor: --last-dot;
   transform: translateX(1.5rem);
@@ -382,7 +382,7 @@ details[open] summary::after {
 
   .curriculum__header::after {
     color: var(--color-primary);
-    content: '좌우로 스크롤하여 커리큘럼을 확인해보세요';
+    content: "좌우로 스크롤하여 커리큘럼을 확인해보세요";
   }
 }
 
