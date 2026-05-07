@@ -23,6 +23,11 @@
   -webkit-background-clip: text;
   color: transparent;
 }
+/* hero 설명 */
+.hero-proposal p {
+  color: var(--color-gray);
+  font-size: var(--body-l);
+}
 /* problem */
 
 /* solution */
