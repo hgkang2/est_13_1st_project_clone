@@ -28,20 +28,19 @@
 }
 
 /* ── Header ─────────────────────────────────── */
-.curriculum__header {
+.curriculum-header {
   margin-bottom: 4rem;
   text-align: center;
 }
-.curriculum__header h2 {
+.curriculum-header h2 {
   margin-bottom: 16px;
 }
-
-.curriculum__header p {
+.curriculum-header p {
   color: var(--color-gray);
 }
 
 /* ── Track (scroll container) ───────────────── */
-.curriculum__track {
+.curriculum-track {
   display: flex;
   gap: var(--space-4);
   flex-wrap: nowrap;
@@ -54,13 +53,13 @@
   scroll-marker-group: after;
 }
 
-.curriculum__track:focus-visible {
+.curriculum-track:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
 /* ── Slide ──────────────────────────────────── */
-.curriculum__slide {
+.curriculum-slide {
   display: flex;
   gap: var(--space-8);
   flex: 0 0 100%;
@@ -74,16 +73,16 @@
   box-sizing: border-box;
 }
 
-.curriculum__slide > * {
+.curriculum-slide > * {
   flex: 1;
 }
-.curriculum__slide-content > h3,
-.curriculum__slide-content > p {
+.curriculum-slide-content > h3,
+.curriculum-slide-content > p {
   margin-bottom: 24px;
 }
 
 /* ── Slide Tag (pill label) ─────────────────── */
-.curriculum__slide-tag {
+.curriculum-slide-tag {
   display: inline-flex;
   gap: var(--space-4);
   align-items: center;
@@ -148,40 +147,40 @@ details[open] summary::after {
 }
 
 /* ── Core Accordion ─────────────────────────── */
-.curriculum__core {
+.curriculum-core {
   margin-bottom: var(--space-4);
 }
 
-.curriculum__core-title {
+.curriculum-core-title {
   margin-bottom: var(--space-4);
   font-size: 1.125rem;
 }
 
-.curriculum__core-title .material-icons-outlined {
+.curriculum-core-title .material-icons-outlined {
   color: var(--color-primary);
 }
 
-.curriculum__core-title,
-.curriculum__core-list li {
+.curriculum-core-title,
+.curriculum-core-list li {
   margin-top: var(--space-2);
   padding: 0.75rem var(--space-4);
   background-color: var(--color-bg-gray);
   border-radius: var(--radius-l);
 }
 
-.curriculum__core-list {
+.curriculum-core-list {
   margin: 0;
   padding-left: 0;
 }
 
-.curriculum__core-list li {
+.curriculum-core-list li {
   display: flex;
   gap: 0.75rem;
   align-items: center;
   list-style: none;
 }
 
-.curriculum__core-list li::before {
+.curriculum-core-list li::before {
   display: inline-block;
   width: 0.375rem;
   height: 0.375rem;
@@ -191,18 +190,18 @@ details[open] summary::after {
 }
 
 /* ── AI Accordion ───────────────────────────── */
-.curriculum__ai-title {
+.curriculum-ai-title {
   padding: 0.75rem var(--space-4);
   background-color: var(--color-bg-purple);
   border-radius: var(--radius-l);
 }
 
-.curriculum__ai-list {
+.curriculum-ai-list {
   margin: 0;
   padding-left: 0;
 }
 
-.curriculum__ai-list li {
+.curriculum-ai-list li {
   display: flex;
   gap: 0.75rem;
   align-items: center;
@@ -215,12 +214,12 @@ details[open] summary::after {
 }
 
 /* ── Slide Visual (right column) ────────────── */
-.curriculum__slide-visual > * {
+.curriculum-slide-visual > * {
   margin-bottom: var(--space-6);
 }
 
 /* ── Project ────────────────────────────────── */
-.curriculum__project {
+.curriculum-project {
   margin-bottom: var(--space-6);
   padding: var(--space-6);
   background: var(--gradient-blue-cyan);
@@ -228,17 +227,17 @@ details[open] summary::after {
   border-radius: var(--radius-xl);
 }
 
-.curriculum__slide:nth-child(2) .curriculum__project,
-.curriculum__slide:nth-child(2) .curriculum__slide-tag {
+.curriculum-slide:nth-child(2) .curriculum-project,
+.curriculum-slide:nth-child(2) .curriculum-slide-tag {
   background: var(--gradient-yellow-orange);
 }
 
-.curriculum__slide:nth-child(3) .curriculum__project,
-.curriculum__slide:nth-child(3) .curriculum__slide-tag {
+.curriculum-slide:nth-child(3) .curriculum-project,
+.curriculum-slide:nth-child(3) .curriculum-slide-tag {
   background: var(--gradient-purple-pink);
 }
 
-.curriculum__project h4 {
+.curriculum-project h4 {
   display: flex;
   gap: 0.5rem;
   align-items: center;
@@ -246,28 +245,28 @@ details[open] summary::after {
   font-weight: 600;
 }
 
-.curriculum__project p:last-child {
+.curriculum-project p:last-child {
   margin: 0;
 }
 
-.curriculum__project-name {
+.curriculum-project-name {
   margin: 0 0 12px;
 }
 
 /* ── Image ──────────────────────────────────── */
-.curriculum__image {
+.curriculum-image {
   max-width: 100%;
   object-fit: cover;
   border-radius: var(--radius-xl);
 }
 
 /* ── Stats ──────────────────────────────────── */
-.curriculum__stats {
+.curriculum-stats {
   display: flex;
   gap: var(--space-4);
 }
 
-.curriculum__stat {
+.curriculum-stat {
   flex: 1;
   padding: var(--space-4);
   background-color: var(--color-bg-gray);
@@ -275,11 +274,11 @@ details[open] summary::after {
   border-radius: var(--radius-xl);
 }
 
-.curriculum__stat > p {
+.curriculum-stat > p {
   margin: 0;
 }
 
-.curriculum__stat > p:first-child {
+.curriculum-stat > p:first-child {
   display: inline-block;
   background: var(--gradient-blue-green);
   -webkit-background-clip: text;
@@ -288,7 +287,7 @@ details[open] summary::after {
 }
 
 /* ── Scroll Markers ─────────────────────────── */
-.curriculum__track::scroll-marker-group {
+.curriculum-track::scroll-marker-group {
   display: inline-flex;
   gap: var(--space-2);
   justify-content: center;
@@ -296,7 +295,7 @@ details[open] summary::after {
   margin-bottom: var(--space-4);
 }
 
-.curriculum__slide::scroll-marker {
+.curriculum-slide::scroll-marker {
   width: 0.75rem;
   height: 0.75rem;
   background-color: #ccc;
@@ -304,34 +303,32 @@ details[open] summary::after {
   border-radius: 50%;
 }
 
-.curriculum__slide:first-child::scroll-marker {
+.curriculum-slide:first-child::scroll-marker {
   anchor-name: --first-dot;
 }
 
-.curriculum__slide:last-child::scroll-marker {
+.curriculum-slide:last-child::scroll-marker {
   anchor-name: --last-dot;
 }
 
-.curriculum__slide:nth-child(1)::scroll-marker:target-current {
+.curriculum-slide:nth-child(1)::scroll-marker:target-current {
   width: 3rem;
   background: var(--gradient-blue-cyan);
   border-radius: var(--radius-full);
 }
-
-.curriculum__slide:nth-child(2)::scroll-marker:target-current {
+.curriculum-slide:nth-child(2)::scroll-marker:target-current {
   width: 3rem;
   background: var(--gradient-yellow-orange);
   border-radius: var(--radius-full);
 }
-
-.curriculum__slide:nth-child(3)::scroll-marker:target-current {
+.curriculum-slide:nth-child(3)::scroll-marker:target-current {
   width: 3rem;
   background: var(--gradient-purple-pink);
   border-radius: var(--radius-full);
 }
 
 /* ── Scroll Buttons ─────────────────────────── */
-.curriculum__track::scroll-button(*) {
+.curriculum-track::scroll-button(*) {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -349,24 +346,24 @@ details[open] summary::after {
   border-radius: 50%;
 }
 
-.curriculum__track::scroll-button(*):hover {
+.curriculum-track::scroll-button(*):hover {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
 
-.curriculum__track::scroll-button(*):focus-visible {
+.curriculum-track::scroll-button(*):focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
-.curriculum__track::scroll-button(left) {
+.curriculum-track::scroll-button(left) {
   content: "\e2ea";
   position-area: center left;
   position-anchor: --first-dot;
   transform: translateX(-1.5rem);
 }
 
-.curriculum__track::scroll-button(right) {
+.curriculum-track::scroll-button(right) {
   content: "\e5e1";
   position-area: center right;
   position-anchor: --last-dot;
@@ -387,7 +384,7 @@ details[open] summary::after {
 }
 
 /* ── Badge ──────────────────────────────────── */
-.curriculum__badge {
+.curriculum-badge {
   display: inline-flex;
   gap: var(--space-2);
   align-items: center;
