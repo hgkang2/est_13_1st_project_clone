@@ -15,6 +15,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-inline: auto;
 }
 
 /* ── Block ──────────────────────────────────── */
@@ -34,15 +35,17 @@
 }
 .curriculum-header h2 {
   margin-bottom: 16px;
+  font-size: var(--text-heading-2xl);
 }
 .curriculum-header p {
+  font-size: var(--text-heading-l);
   color: var(--color-gray);
 }
 
 /* ── Track (scroll container) ───────────────── */
 .curriculum-track {
   display: flex;
-  gap: var(--space-4);
+  gap: 32px;
   flex-wrap: nowrap;
   overflow-x: scroll;
   width: 100%;
@@ -61,10 +64,10 @@
 /* ── Slide ──────────────────────────────────── */
 .curriculum-slide {
   display: flex;
-  gap: var(--space-8);
+  gap: 32px;
   flex: 0 0 100%;
   margin: 0;
-  padding: var(--padding-card-desktop);
+  padding: 48px;
   border: 1px solid #0000001a;
   max-width: 100%;
   background-color: var(--color-white);
@@ -75,22 +78,28 @@
 
 .curriculum-slide > * {
   flex: 1;
+  min-width: 0;
 }
 .curriculum-slide-content > h3,
 .curriculum-slide-content > p {
   margin-bottom: 24px;
 }
 
+.curriculum-slide-content h3 {
+  font-size: var(--text-heading-xl);
+  overflow-wrap: break-word;
+}
+
 /* ── Slide Tag (pill label) ─────────────────── */
 .curriculum-slide-tag {
   display: inline-flex;
-  gap: var(--space-4);
+  gap: 16px;
   align-items: center;
-  margin-bottom: var(--space-4);
-  padding: var(--space-2) var(--space-4);
+  margin-bottom: 16px;
+  padding: 8px 16px;
   background: var(--gradient-blue-cyan);
   color: var(--color-white);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
 }
 
 /* ── Details / Accordion base ───────────────── */
@@ -123,12 +132,12 @@ summary {
 summary:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 4px;
-  border-radius: var(--radius-m);
+  border-radius: 8px;
 }
 
 summary > span {
   display: inline-flex;
-  gap: var(--space-2);
+  gap: 8px;
   align-items: center;
 }
 
@@ -148,11 +157,11 @@ details[open] summary::after {
 
 /* ── Core Accordion ─────────────────────────── */
 .curriculum-core {
-  margin-bottom: var(--space-4);
+  margin-bottom: 16px;
 }
 
 .curriculum-core-title {
-  margin-bottom: var(--space-4);
+  margin-bottom: 16px;
   font-size: 1.125rem;
 }
 
@@ -162,10 +171,10 @@ details[open] summary::after {
 
 .curriculum-core-title,
 .curriculum-core-list li {
-  margin-top: var(--space-2);
-  padding: 0.75rem var(--space-4);
+  margin-top: 8px;
+  padding: 0.75rem 16px;
   background-color: var(--color-bg-gray);
-  border-radius: var(--radius-l);
+  border-radius: 12px;
 }
 
 .curriculum-core-list {
@@ -191,9 +200,9 @@ details[open] summary::after {
 
 /* ── AI Accordion ───────────────────────────── */
 .curriculum-ai-title {
-  padding: 0.75rem var(--space-4);
+  padding: 0.75rem 1rem;
   background-color: var(--color-bg-purple);
-  border-radius: var(--radius-l);
+  border-radius: 12px;
 }
 
 .curriculum-ai-list {
@@ -205,26 +214,26 @@ details[open] summary::after {
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  margin-top: var(--space-2);
-  padding: 0.75rem var(--space-4);
+  margin-top: 8px;
+  padding: 0.75rem;
   border: 1px solid #e9d4ff;
   background-color: #fdf2f8;
   list-style: none;
-  border-radius: var(--radius-l);
+  border-radius: 12px;
 }
 
 /* ── Slide Visual (right column) ────────────── */
 .curriculum-slide-visual > * {
-  margin-bottom: var(--space-6);
+  margin-bottom: 24px;
 }
 
 /* ── Project ────────────────────────────────── */
 .curriculum-project {
-  margin-bottom: var(--space-6);
-  padding: var(--space-6);
+  margin-bottom: 24px;
+  padding: 24px;
   background: var(--gradient-blue-cyan);
   color: var(--color-white);
-  border-radius: var(--radius-xl);
+  border-radius: 16px;
 }
 
 .curriculum-slide:nth-child(2) .curriculum-project,
@@ -251,27 +260,28 @@ details[open] summary::after {
 
 .curriculum-project-name {
   margin: 0 0 12px;
+  font-size: var(--text-body-xl);
 }
 
 /* ── Image ──────────────────────────────────── */
 .curriculum-image {
   max-width: 100%;
   object-fit: cover;
-  border-radius: var(--radius-xl);
+  border-radius: 16px;
 }
 
 /* ── Stats ──────────────────────────────────── */
 .curriculum-stats {
   display: flex;
-  gap: var(--space-4);
+  gap: 16px;
 }
 
 .curriculum-stat {
   flex: 1;
-  padding: var(--space-4);
+  padding: 16px;
   background-color: var(--color-bg-gray);
   text-align: center;
-  border-radius: var(--radius-xl);
+  border-radius: 16px;
 }
 
 .curriculum-stat > p {
@@ -280,19 +290,21 @@ details[open] summary::after {
 
 .curriculum-stat > p:first-child {
   display: inline-block;
+  margin-bottom: 4px;
   background: var(--gradient-blue-green);
   -webkit-background-clip: text;
   background-clip: text;
+  font-size: var(--text-body-xl);
   color: transparent;
 }
 
 /* ── Scroll Markers ─────────────────────────── */
 .curriculum-track::scroll-marker-group {
   display: inline-flex;
-  gap: var(--space-2);
+  gap: 8px;
   justify-content: center;
   margin-top: 4rem;
-  margin-bottom: var(--space-4);
+  margin-bottom: 16px;
 }
 
 .curriculum-slide::scroll-marker {
@@ -314,17 +326,17 @@ details[open] summary::after {
 .curriculum-slide:nth-child(1)::scroll-marker:target-current {
   width: 3rem;
   background: var(--gradient-blue-cyan);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
 }
 .curriculum-slide:nth-child(2)::scroll-marker:target-current {
   width: 3rem;
   background: var(--gradient-yellow-orange);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
 }
 .curriculum-slide:nth-child(3)::scroll-marker:target-current {
   width: 3rem;
   background: var(--gradient-purple-pink);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
 }
 
 /* ── Scroll Buttons ─────────────────────────── */
@@ -386,15 +398,15 @@ details[open] summary::after {
 /* ── Badge ──────────────────────────────────── */
 .curriculum-badge {
   display: inline-flex;
-  gap: var(--space-2);
+  gap: 8px;
   align-items: center;
   justify-content: center;
   align-self: center;
-  margin-top: var(--space-12);
-  padding: 0.75rem var(--space-6);
+  margin-top: 36px;
+  padding: 12px 24px;
   border: 1px solid var(--color-primary-10);
   background: linear-gradient(90deg, #eff6ff 0%, #f0fdf4 100%);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
 }
 
 .curriculum__badge span {
@@ -407,11 +419,11 @@ details[open] summary::after {
     padding: var(--padding-section-y-tablet) 0;
   }
 
-  .curriculum__track {
+  .curriculum-track {
     align-items: start;
   }
 
-  .curriculum__slide {
+  .curriculum-slide {
     flex-direction: column;
   }
 }
