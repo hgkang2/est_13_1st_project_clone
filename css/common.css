@@ -1,50 +1,47 @@
+@import url(normalize.css);
+@import url(reset.css);
+
 :root {
+  /* 레이아웃 */
+  --container-max: 1272px;
+  --container-tablet: 688px;
+  --container-mobile: 360px;
+
   /* 폰트 변수 */
+  --base-unit: 27px;
+  --base-font: 16px;
+
   /* 폰트 패밀리 */
   --font-primary: "Noto Sans KR", sans-serif;
   --font-logo: "Noto Sans", sans-serif;
   --font-icon: "Material Icons", sans-serif;
 
-  /* 헤딩 크기 */
-  --text-heading-3xl: 72px;
-  --text-heading-2xl: 48px;
-  --text-heading-xl: 32px;
-  --text-heading-l: 20px;
-  --text-logo: 18px; /* header_logo — Noto Sans Bold */
+  /* 헤딩 요소 */
+  --text-heading-3xl: calc(var(--base-font) * 4.5);
+  --text-heading-2xl: calc(var(--base-font) * 3);
+  --text-heading-xl: calc(var(--base-font) * 2);
+  --text-heading-l: calc(var(--base-font) * 1.25);
+  --text-logo: calc(var(--base-font) * 1.125);
 
   /* 본문 크기 */
-  --text-body-2xl: 36px;
-  --text-body-xl: 24px;
-  --text-body-l: 20px;
-  --text-body-m: 16px;
-  --text-body-s: 14px;
-
-  /* 행간 (Line Height) */
-  --leading-heading-3xl: 81px;
-  --leading-heading-2xl: 54px;
-  --leading-heading-xl: 54px;
-  --leading-heading-xl-mobile: 37px; /* heading_mobile — 32px / 37px */
-  --leading-heading-l: 27px;
-  --leading-body-2xl: 54px;
-  --leading-body-xl: 27px;
-  --leading-body-l: 27px;
-  --leading-body-m: 27px;
-  --leading-body-s: 27px;
-
-  /* 자간 (Letter Spacing) */
-  --tracking-default: 0;
+  --text-body-2xl: calc(var(--base-font) * 2.25);
+  --text-body-xl: calc(var(--base-font) * 1.5);
+  --text-body-l: calc(var(--base-font) * 1.25);
+  --text-body-m: var(--base-font);
+  --text-body-s: calc(var(--base-font) * 0.875);
 
   /* 굵기 (Font Weight) */
   --weight-bold: 700;
   --weight-medium: 500;
   --weight-regular: 400;
-  /* 컬러 변수 */
 
+  /* 컬러 변수 */
   --color-primary: #155dfc;
   --color-primary-75: rgba(21, 93, 252, 0.75);
   --color-primary-10: rgba(21, 93, 252, 0.1);
   --color-black: #212121;
   --color-gray: #717282;
+  --color-gray-20: rgba(113, 114, 130, 0.2);
   --color-white: #ffffff;
 
   /* 배경 */
@@ -53,139 +50,31 @@
   --color-bg-gray: #ececf0;
   --color-bg-purple: #faf5ff;
 
-  /* 불투명도 */
-  --color-gray-20: rgba(113, 114, 130, 0.2);
-
   /* 그라디언트 */
   --gradient-blue-green: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
   --gradient-blue-cyan: linear-gradient(90deg, #2b7fff 0%, #00b8db 100%);
   --gradient-yellow-orange: linear-gradient(90deg, #f0b100 0%, #ff6900 100%);
   --gradient-purple-pink: linear-gradient(90deg, #ad46ff 0%, #f6339a 100%);
   --gradient-bg: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
-
-  /* 레이아웃 */
-  /* ─── 간격 스케일 (Spacing Scale) ──────────────────────── */
-
-  --space-1: 4px;
-  --space-2: 8px;
-  --space-4: 16px;
-  --space-6: 24px;
-  --space-8: 32px;
-  --space-12: 48px;
-  --space-20: 80px;
-  --space-32: 128px;
-
-  /* ─── 패딩 패턴 (Padding Patterns) ─────────────────────── */
-
-  --padding-card-desktop: 48px;
-  --padding-card-tablet: 40px;
-  --padding-card-mobile: 16px;
-  --padding-section-y-desktop: 108px;
-  --padding-section-y-tablet: 54px;
-  --padding-section-y-mobile: 27px;
-  --padding-section-x-desktop: 324px; /* (1920 - 1272) / 2 */
-  --padding-section-x-tablet: 40px;
-  --padding-section-x-mobile: 16px;
-
-  /* ─── 그리드 & 레이아웃 (Grid & Layout) ────────────────── */
-
-  --container-max: 1272px;
-  /* --wrapper-desktop: 1920px;s */
-  --container-tablet: 688px;
-  --container-mobile: 360px;
-
-  --grid-gutter-desktop: 0; /* max-width 컨테이너 방식 */
-  --grid-gutter-tablet: 24px; /* 12컬럼 */
-  --grid-gutter-mobile: 16px; /* 4컬럼 */
-
-  --grid-cols-desktop: 12;
-  --grid-cols-tablet: 12;
-  --grid-cols-mobile: 4;
-
-  /* ─── 테두리 반경 (Border Radius) ──────────────────────── */
-
-  --radius-s: 6px;
-  --radius-m: 8px;
-  --radius-l: 12px;
-  --radius-xl: 16px;
-  --radius-full: 9999px;
 }
-
-/* 타이포그래피 */
-body {
-  font-family: var(--font-primary);
-}
-.text-heading-3xl {
-  font-family: var(--font-primary);
-  font-size: var(--text-heading-3xl);
-  font-weight: var(--weight-bold);
-  line-height: var(--leading-heading-3xl);
-}
-.text-heading-2xl {
-  font-family: var(--font-primary);
-  font-size: var(--text-heading-2xl);
-  font-weight: var(--weight-bold);
-  line-height: var(--leading-heading-2xl);
-}
-.text-heading-xl {
-  font-family: var(--font-primary);
-  font-size: var(--text-heading-xl);
-  font-weight: var(--weight-bold);
-  line-height: var(--leading-heading-xl);
-}
-.text-heading-l {
-  font-family: var(--font-primary);
-  font-size: var(--text-heading-l);
-  font-weight: var(--weight-medium);
-  line-height: var(--leading-heading-l);
-}
-.text-body-2xl {
-  font-family: var(--font-primary);
-  font-size: var(--text-body-2xl);
-  font-weight: var(--weight-bold);
-  line-height: var(--leading-body-2xl);
-}
-.text-body-xl {
-  font-family: var(--font-primary);
-  font-size: var(--text-body-xl);
-  font-weight: var(--weight-bold);
-  line-height: var(--leading-body-xl);
-}
-.text-body-l {
-  font-family: var(--font-primary);
-  font-size: var(--text-body-l);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-body-l);
-}
-.text-body-m {
-  font-family: var(--font-primary);
-  font-size: var(--text-body-m);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-body-m);
-}
-.text-body-s {
-  font-family: var(--font-primary);
-  font-size: var(--text-body-s);
-  font-weight: var(--weight-regular);
-  line-height: var(--leading-body-s);
-}
-/* 링크버튼 */
 
 /* ─── 컨테이너 (Container) ──────────────────────────────── */
 
 .container {
+  width: 100%;
   max-width: var(--container-max);
-  margin-inline: auto;
 }
 
 @media (max-width: 768px) {
   .container {
-    max-width: 688px;
+    padding: calc(var(--base-unit) * 2) 0;
+    max-width: var(--container-tablet);
   }
 }
 
 @media (max-width: 360px) {
   .container {
+    padding: var(--base-unit) 0;
     max-width: 328px;
   }
 }
