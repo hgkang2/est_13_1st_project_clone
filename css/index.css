@@ -4,6 +4,17 @@
 .hero {
   background: var(--gradient-bg-blue-green);
 }
+.badge-wrapper {
+  display: flex;
+  gap: 12px;
+}
+.hero-badge-highlight {
+  border: 1px solid rgba(21, 93, 252, 0.2);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
 /* problem */
 
 /* solution */

@@ -153,11 +153,11 @@ section {
 /* 버튼 */
 .btn {
   display: inline-block;
-  box-sizing: border-box;
   padding: 20px 40px;
   background-color: var(--color-primary);
   color: white;
   text-decoration: none;
+  box-sizing: border-box;
   border-radius: 10px;
 }
 .btn-header {
@@ -176,13 +176,18 @@ section {
   font-size: var(--body-2xl);
   color: transparent;
 }
-
+/* 뱃지 */
 .badge {
   display: inline-flex;
   gap: 8px;
   align-items: center;
   padding: 10px 20px;
+  box-shadow: 4px 16px 15px -7px rgba(0, 0, 0, 0.1);
   background: var(--gradient-blue-green);
+  font-size: var(--body-s);
   color: white;
   border-radius: 9999px;
+}
+.badge .material-icons-outlined {
+  font-size: var(--body-s);
 }
