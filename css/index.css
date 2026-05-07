@@ -8,37 +8,23 @@
 
 /* result */
 .result {
-  /* 상하 패딩 최적화 (필요에 따라 0으로 조정 가능) */
-  padding: 80px 0; 
+  padding: 80px 0;
   background: linear-gradient(135deg, #1e69ff 0%, #00ba71 100%);
   color: var(--color-white);
   text-align: center;
 }
 
-.result-header {
+.result .result-header {
   margin-bottom: 48px;
 }
 
-/* 공통 유리 효과 (Glassmorphism) 스타일 */
-.result-card, .partner-chip {
-  background-color: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  color: var(--color-white);
+.result .result-header h2 {
+  font-weight: 800;
+  margin-bottom: 12px;
 }
 
-/* 카드 및 칩 공통 호버 효과 */
-.result-card:hover, .partner-chip:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-5px);
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-}
-
-/* ── Grid ──────────────────────────────────── */
-.result-grid {
+/* ── Result Grid & Card ── */
+.result .result-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
@@ -47,32 +33,43 @@
   margin: 0 auto;
 }
 
-.result-card {
-  padding: 48px 24px;
+.result .result-card {
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
-  cursor: default;
+  padding: 48px 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.result-icon {
-  font-size: 2.5rem !important;
+.result .result-card:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.result .result-card .result-icon {
+  font-size: 2.5rem;
   margin-bottom: 16px;
-  opacity: 0.9;
+  display: inline-block;
 }
 
-.result-value {
+.result .result-card .result-value {
   font-size: 2.8rem;
   font-weight: 800;
   margin-bottom: 8px;
   letter-spacing: -1px;
 }
 
-.result-label {
+.result .result-card .result-label {
   font-size: 1.05rem;
   font-weight: 600;
   line-height: 1.5;
 }
 
-.result-label span {
+.result .result-card .result-label span {
   display: block;
   font-size: 0.85rem;
   font-weight: 400;
@@ -80,12 +77,12 @@
   margin-top: 4px;
 }
 
-/* ── Partners ──────────────────────────────── */
-.partner-footer {
+/* ── Partner Section ── */
+.result .partner-footer {
   margin-top: 70px;
 }
 
-.partner-title {
+.result .partner-title {
   font-size: 0.85rem;
   font-weight: 600;
   letter-spacing: 1px;
@@ -94,7 +91,7 @@
   text-transform: uppercase;
 }
 
-.partner-list {
+.result .partner-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -103,23 +100,38 @@
   margin: 0 auto;
 }
 
-.partner-chip {
+/* 기업 칩 스타일 (유리 효과 공통 적용) */
+.result .partner-chip {
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 10px 24px;
   border-radius: 999px;
   font-size: 0.9rem;
   font-weight: 500;
+  color: var(--color-white);
   cursor: pointer;
+  transition: all 0.3s ease;
   outline: none;
 }
 
-/* 모바일 대응 */
+.result .partner-chip:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Mobile Responsive ── */
 @media screen and (max-width: 1024px) {
-  .result-grid { grid-template-columns: repeat(2, 1fr); }
+  .result .result-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media screen and (max-width: 640px) {
-  .result-grid { grid-template-columns: 1fr; }
-  .result-card { padding: 32px 20px; }
+  .result .result-grid { grid-template-columns: 1fr; }
+  .result .result-card { padding: 32px 20px; }
+  .result .result-header { margin-bottom: 32px; }
 }
 /* review */
 
