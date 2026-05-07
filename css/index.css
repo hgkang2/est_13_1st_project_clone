@@ -12,7 +12,436 @@
 
 /* review */
 
-/* curriculum */
+/* curriculum - 안건욱 */
+.flex-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.margin-auto {
+  margin-inline: auto;
+}
+
+/* ── Block ──────────────────────────────────── */
+.curriculum {
+  padding: 64px 0;
+  background: linear-gradient(
+    to bottom,
+    var(--color-white),
+    oklab(0.944223 0.00154194 -0.00510824 / 0.3)
+  );
+}
+
+/* ── Header ─────────────────────────────────── */
+.curriculum-header {
+  margin-bottom: 48px;
+  text-align: center;
+}
+.curriculum-header h2 {
+  margin-bottom: 16px;
+}
+.curriculum-header p {
+  color: var(--color-gray);
+}
+
+/* ── Track (scroll container) ───────────────── */
+.curriculum-track {
+  display: flex;
+  gap: 32px;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  width: 100%;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  overscroll-behavior-x: contain;
+  scroll-marker-group: after;
+}
+
+.curriculum-track:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* ── Slide ──────────────────────────────────── */
+.curriculum-slide {
+  display: flex;
+  gap: 32px;
+  flex: 0 0 100%;
+  margin: 0;
+  padding: 48px;
+  border: 1px solid #0000001a;
+  max-width: 100%;
+  background-color: var(--color-white);
+  scroll-snap-align: center;
+  border-radius: 1.25rem;
+  box-sizing: border-box;
+}
+
+.curriculum-slide > * {
+  flex: 1;
+  min-width: 0;
+}
+.curriculum-slide-content > h3,
+.curriculum-slide-content > p {
+  margin-bottom: 24px;
+}
+
+.curriculum-slide-content h3 {
+  font-size: var(--text-heading-xl);
+  font-weight: 700;
+  overflow-wrap: break-word;
+}
+
+/* ── Slide Tag (pill label) ─────────────────── */
+.curriculum-slide-tag {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  background: var(--gradient-blue-cyan);
+  color: var(--color-white);
+  border-radius: 9999px;
+}
+
+/* ── Details / Accordion base ───────────────── */
+details {
+  overflow: hidden;
+  interpolate-size: allow-keywords;
+}
+
+details::details-content {
+  transition:
+    block-size 0.3s,
+    content-visibility 0.3s;
+  block-size: 0;
+  transition-behavior: allow-discrete;
+}
+
+details[open]::details-content {
+  block-size: auto;
+}
+
+summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+summary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+summary > span {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  font-family: "Material Icons";
+  transition: transform 0.3s;
+  content: "\e313";
+}
+
+details[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* ── Core Accordion ─────────────────────────── */
+.curriculum-core {
+  margin-bottom: 16px;
+}
+
+.curriculum-core-title {
+  margin-bottom: 16px;
+  font-size: 1.125rem;
+}
+
+.curriculum-core-title .material-icons-outlined {
+  color: var(--color-primary);
+}
+
+.curriculum-core-title,
+.curriculum-core-list li {
+  margin-top: 8px;
+  padding: 12px 16px;
+  background-color: var(--color-bg-gray);
+  border-radius: 12px;
+}
+
+.curriculum-core-list {
+  margin: 0;
+  padding-left: 0;
+}
+
+.curriculum-core-list li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  list-style: none;
+}
+
+.curriculum-core-list li::before {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-primary);
+  content: "";
+  border-radius: 50%;
+}
+
+/* ── AI Accordion ───────────────────────────── */
+.curriculum-ai-title {
+  padding: 12px 16px;
+  background-color: var(--color-bg-purple);
+  border-radius: 12px;
+}
+
+.curriculum-ai-list {
+  margin: 0;
+  padding-left: 0;
+}
+
+.curriculum-ai-list li {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+  padding: 12px;
+  border: 1px solid #e9d4ff;
+  background-color: #fdf2f8;
+  list-style: none;
+  border-radius: 12px;
+}
+
+/* ── Slide Visual (right column) ────────────── */
+.curriculum-slide-visual > * {
+  margin-bottom: 24px;
+}
+
+/* ── Project ────────────────────────────────── */
+.curriculum-project {
+  margin-bottom: 24px;
+  padding: 24px;
+  background: var(--gradient-blue-cyan);
+  color: var(--color-white);
+  border-radius: 16px;
+}
+
+.curriculum-slide:nth-child(2) .curriculum-project,
+.curriculum-slide:nth-child(2) .curriculum-slide-tag {
+  background: var(--gradient-yellow-orange);
+}
+
+.curriculum-slide:nth-child(3) .curriculum-project,
+.curriculum-slide:nth-child(3) .curriculum-slide-tag {
+  background: var(--gradient-purple-pink);
+}
+
+.curriculum-project h4 {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.curriculum-project p:last-child {
+  margin: 0;
+}
+
+.curriculum-project-name {
+  margin: 0 0 12px;
+  font-size: var(--text-body-xl);
+  font-weight: 700;
+}
+
+/* ── Image ──────────────────────────────────── */
+.curriculum-image {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* ── Stats ──────────────────────────────────── */
+.curriculum-stats {
+  display: flex;
+  gap: 16px;
+}
+
+.curriculum-stat {
+  flex: 1;
+  padding: 16px;
+  background-color: var(--color-bg-gray);
+  text-align: center;
+  border-radius: 16px;
+}
+
+.curriculum-stat > p {
+  margin: 0;
+}
+
+.curriculum-stat > p:first-child {
+  display: inline-block;
+  margin-bottom: 4px;
+  background: var(--gradient-blue-green);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: var(--body-xl);
+  color: transparent;
+}
+
+/* ── Scroll Markers ─────────────────────────── */
+.curriculum-track::scroll-marker-group {
+  display: inline-flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 64px;
+  margin-bottom: 16px;
+}
+
+.curriculum-slide::scroll-marker {
+  width: 12px;
+  height: 12px;
+  background-color: #ccc;
+  content: " ";
+  border-radius: 50%;
+}
+
+.curriculum-slide:first-child::scroll-marker {
+  anchor-name: --first-dot;
+}
+
+.curriculum-slide:last-child::scroll-marker {
+  anchor-name: --last-dot;
+}
+
+.curriculum-slide:nth-child(1)::scroll-marker:target-current {
+  width: 3rem;
+  background: var(--gradient-blue-cyan);
+  border-radius: 9999px;
+}
+
+.curriculum-slide:nth-child(2)::scroll-marker:target-current {
+  width: 3rem;
+  background: var(--gradient-yellow-orange);
+  border-radius: 9999px;
+}
+
+.curriculum-slide:nth-child(3)::scroll-marker:target-current {
+  width: 3rem;
+  background: var(--gradient-purple-pink);
+  border-radius: 9999px;
+}
+
+/* ── Scroll Buttons ─────────────────────────── */
+.curriculum-track::scroll-button(*) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow:
+    0 10px 15px -3px #0000001a,
+    0 4px 6px -4px #0000001a;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-white);
+  font-family: "Material Icons";
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.curriculum-track::scroll-button(left) {
+  content: "\e2ea";
+  position-area: center left;
+  position-anchor: --first-dot;
+  transform: translateX(-1.5rem);
+}
+
+.curriculum-track::scroll-button(right) {
+  content: "\e5e1";
+  position-area: center right;
+  position-anchor: --last-dot;
+  transform: translateX(1.5rem);
+}
+
+.curriculum-track::scroll-button(left):hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.curriculum-track::scroll-button(right):hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+.curriculum-track::scroll-button(*):disabled:hover {
+  background-color: light-dark(rgba(239, 239, 239, 0.3), rgba(19, 1, 1, 0.3));
+  color: light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+}
+
+.curriculum-track::scroll-button(*):focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 4px;
+}
+
+/* ── Fallback ───────────────────────────────── */
+@supports not (scroll-marker-group: after) {
+  .curriculum-track {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-primary) transparent;
+  }
+
+  .curriculum-header::after {
+    color: var(--color-primary);
+    content: "좌우로 스크롤하여 커리큘럼을 확인해보세요";
+  }
+}
+
+/* ── Badge ──────────────────────────────────── */
+.curriculum-badge {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  margin-top: 36px;
+  padding: 12px 24px;
+  border: 1px solid var(--color-primary-10);
+  background: linear-gradient(90deg, #eff6ff 0%, #f0fdf4 100%);
+  border-radius: 9999px;
+}
+
+.curriculum__badge span {
+  color: var(--color-primary);
+}
+
+/* ── Mobile ─────────────────────────────────── */
+@media screen and (max-width: 768px) {
+  .curriculum {
+    padding: 48px 0;
+  }
+
+  .curriculum-track {
+    align-items: start;
+  }
+
+  .curriculum-slide {
+    flex-direction: column;
+  }
+}
 
 /* cta */
 
