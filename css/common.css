@@ -211,3 +211,71 @@
   color: white;
   border-radius: var(--radius-full);
 }
+/* 특징 카드 (Feature Card) */
+.feature-card {
+  /* 이미지에 표시된 사이즈 반영 */
+  width: 624px;
+  height: 116px;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-4); /* 16px */
+  padding: 0 var(--space-8); /* 좌우 패딩 32px */
+
+  background-color: var(--color-white);
+  border: 1px solid var(--color-gray-20);
+  border-radius: var(--radius-l); /* 보라색 가이드의 둥근 모서리 반영 */
+  box-sizing: border-box;
+
+  /* 보라색 테두리는 피그마 가이드라인이므로, 
+     실제 구현 시에는 호버 효과 등으로 활용하면 좋습니다. */
+  transition: border-color 0.3s ease;
+}
+
+.feature-card:hover {
+  border-color: #ad46ff; /* 가이드라인의 보라색 계열로 호버 포인트 */
+}
+
+.feature-card-icon {
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary-10); /* 연한 블루 배경 */
+  border-radius: var(--radius-m);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-card-icon .material-icons-outlined {
+  color: var(--color-primary);
+  font-size: 28px;
+}
+
+.feature-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.feature-card-title {
+  font-size: var(--text-body-l); /* 20px */
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 0;
+}
+
+.feature-card-desc {
+  font-size: var(--text-body-s); /* 14px */
+  color: var(--color-gray);
+  margin: 0;
+}
+
+/* 모바일 대응 (필요시) */
+@media (max-width: 768px) {
+  .feature-card {
+    width: 100%; /* 모바일에서는 부모 너비에 맞춤 */
+    height: auto;
+    padding: var(--space-6);
+  }
+}
