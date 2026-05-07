@@ -115,6 +115,14 @@ section {
   height: 1px;
   clip-path: inset(50%);
 }
+.flex-column {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.margin-auto {
+  margin-inline: auto;
+}
 /* ─── 컨테이너 (Container) ──────────────────────────────── */
 .container {
   width: 100%;

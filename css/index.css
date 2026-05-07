@@ -23,19 +23,10 @@
 
 /* review */
 
-/* curriculum - 안건욱 */
-.flex-column {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-.margin-auto {
-  margin-inline: auto;
-}
-
-/* ── Block ──────────────────────────────────── */
+/* 커리큘럼 블록
+   - 커리큘럼 전체 섹션의 레이아웃과 배경을 담당
+   - 패딩은 섹션 상하 여백을 정의, 배경은 위->아래 그라데이션으로 시각적 구분을 줌 */
 .curriculum {
-  padding: 64px 0;
   background: linear-gradient(
     to bottom,
     var(--color-white),
@@ -44,6 +35,9 @@
 }
 
 /* ── Header ─────────────────────────────────── */
+/* 커리큘럼 헤더
+   - 섹션 제목과 부제목을 가운데 정렬
+   - 모바일 시 폰트 크기 및 간격을 조절할 여지 있음 */
 .curriculum-header {
   margin-bottom: 48px;
   text-align: center;
@@ -56,6 +50,10 @@
 }
 
 /* ── Track (scroll container) ───────────────── */
+/* 트랙(스크롤 컨테이너)
+   - 가로 스크롤로 슬라이드를 보여주는 컨테이너
+   - `scroll-snap`을 사용해 슬라이드 정렬을 보장
+   - `overscroll-behavior-x: contain`으로 페이지 스크롤과 분리 */
 .curriculum-track {
   display: flex;
   gap: 32px;
@@ -69,12 +67,18 @@
   scroll-marker-group: after;
 }
 
+/* 포커스 스타일
+   - 키보드 접근성을 위해 포커스 시 시각적 표시를 제공 */
 .curriculum-track:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 4px;
 }
 
 /* ── Slide ──────────────────────────────────── */
+/* 개별 슬라이드
+   - 트랙 내부의 각 카드(슬라이드)를 표현
+   - 기본적으로 100% 너비로 설정해 뷰포트 하나에 하나의 슬라이드가 보이도록 함
+   - 패딩과 테두리로 카드 스타일링, 반응형에서 세로 정렬로 전환 */
 .curriculum-slide {
   display: flex;
   gap: 32px;
@@ -89,6 +93,9 @@
   box-sizing: border-box;
 }
 
+/* 슬라이드 내부 컬럼 분배
+   - 좌우 열 비율을 동일하게 주기 위해 `flex:1` 사용
+   - `min-width:0`으로 내용이 넘칠 때 flexbox 축소를 허용 */
 .curriculum-slide > * {
   flex: 1;
   min-width: 0;
@@ -98,6 +105,8 @@
   margin-bottom: 24px;
 }
 
+/* 슬라이드 제목 스타일
+   - 큰 제목은 줄 바꿈을 허용하여 레이아웃 깨짐 방지 */
 .curriculum-slide-content h3 {
   font-size: var(--text-heading-xl);
   font-weight: 700;
@@ -105,6 +114,9 @@
 }
 
 /* ── Slide Tag (pill label) ─────────────────── */
+/* 슬라이드 태그(필형 레이블)
+   - 작은 라벨 형태로 단계(1단계/2단계 등)를 표시
+   - 둥근 pill 스타일로 가독성 제공 */
 .curriculum-slide-tag {
   display: inline-flex;
   gap: 16px;
@@ -117,6 +129,9 @@
 }
 
 /* ── Details / Accordion base ───────────────── */
+/* details/summary 아코디언 기본
+   - `details` 요소를 커스텀 애니메이션으로 열고 닫기 위해 스타일을 적용
+   - `::details-content`는 브라우저별 구현 차이를 고려해 트랜지션을 설정 */
 details {
   overflow: hidden;
   interpolate-size: allow-keywords;
@@ -134,6 +149,10 @@ details[open]::details-content {
   block-size: auto;
 }
 
+/* summary(아코디언 제목)
+   - 제목은 좌우 정렬로 요약 텍스트와 상태 아이콘을 배치
+   - 포커스 시 접근성 표시를 추가하여 키보드 사용자에게 명확히 함
+   - 커스텀 마커(아이콘)는 `::after`로 삽입해 회전 애니메이션 적용 */
 summary {
   display: flex;
   align-items: center;
@@ -170,6 +189,9 @@ details[open] summary::after {
 }
 
 /* ── Core Accordion ─────────────────────────── */
+/* 핵심 학습(코어) 아코디언 스타일
+   - 핵심 학습 목록의 제목과 항목 스타일을 정의
+   - 각 항목은 좌측 점(원)으로 강조하여 목록성이 높음 */
 .curriculum-core {
   margin-bottom: 16px;
 }
@@ -213,6 +235,9 @@ details[open] summary::after {
 }
 
 /* ── AI Accordion ───────────────────────────── */
+/* AI 활용 학습 블록
+   - AI 관련 학습 항목을 시각적으로 구분하기 위한 스타일
+   - 배경/테두리 색상으로 카드 느낌을 줌 */
 .curriculum-ai-title {
   padding: 12px 16px;
   background-color: var(--color-bg-purple);
@@ -237,11 +262,16 @@ details[open] summary::after {
 }
 
 /* ── Slide Visual (right column) ────────────── */
+/* 슬라이드 비주얼 열(오른쪽 열)
+   - 이미지, 프로젝트 카드, 통계 등 시각 요소들의 공통 마진을 정의 */
 .curriculum-slide-visual > * {
   margin-bottom: 24px;
 }
 
 /* ── Project ────────────────────────────────── */
+/* 프로젝트 카드
+   - 각 슬라이드의 대표 프로젝트를 보여주는 카드 스타일
+   - 주요 색상과 패딩으로 강조함 */
 .curriculum-project {
   margin-bottom: 24px;
   padding: 24px;
@@ -250,6 +280,8 @@ details[open] summary::after {
   border-radius: 16px;
 }
 
+/* 슬라이드별 변형 배경
+   - 2번째, 3번째 슬라이드에 대해 태그/프로젝트 카드 색상을 별도 지정하여 구분 */
 .curriculum-slide:nth-child(2) .curriculum-project,
 .curriculum-slide:nth-child(2) .curriculum-slide-tag {
   background: var(--gradient-yellow-orange);
@@ -279,6 +311,9 @@ details[open] summary::after {
 }
 
 /* ── Image ──────────────────────────────────── */
+/* 프로젝트 이미지
+   - 반응형으로 이미지가 영역을 넘지 않도록 `max-width:100%` 적용
+   - `object-fit:cover`로 비율 유지하며 잘림 허용 */
 .curriculum-image {
   max-width: 100%;
   object-fit: cover;
@@ -286,6 +321,9 @@ details[open] summary::after {
 }
 
 /* ── Stats ──────────────────────────────────── */
+/* 통계(기간/프로젝트 수) 박스
+   - 플렉스로 가로 배치, 각 박스는 동일한 비율로 확장
+   - 상단 숫자는 그라데이션 텍스트로 강조 */
 .curriculum-stats {
   display: flex;
   gap: 16px;
@@ -314,6 +352,9 @@ details[open] summary::after {
 }
 
 /* ── Scroll Markers ─────────────────────────── */
+/* 스크롤 마커(진행 표시 점)
+   - CSS 스크롤 마커 기능을 이용해 현재 슬라이드 상태를 시각화
+   - 지원되지 않는 브라우저는 fallback 스타일을 제공 */
 .curriculum-track::scroll-marker-group {
   display: inline-flex;
   gap: 8px;
@@ -357,6 +398,9 @@ details[open] summary::after {
 }
 
 /* ── Scroll Buttons ─────────────────────────── */
+/* 스크롤 버튼(브라우저 지원 요소)
+   - 좌우 네비게이션 버튼을 위한 스타일 (스크롤 스냅 보완)
+   - 접근성: 포커스 시 아웃라인 표시 */
 .curriculum-track::scroll-button(*) {
   display: inline-flex;
   align-items: center;
@@ -408,7 +452,8 @@ details[open] summary::after {
   outline-offset: 4px;
 }
 
-/* ── Fallback ───────────────────────────────── */
+/* Fallback: 스크롤 마커 미지원 브라우저 처리
+   - `@supports`를 사용해 기능 미지원 시 스크롤바 스타일과 안내 문구 표시 */
 @supports not (scroll-marker-group: after) {
   .curriculum-track {
     scrollbar-width: thin;
@@ -422,6 +467,8 @@ details[open] summary::after {
 }
 
 /* ── Badge ──────────────────────────────────── */
+/* 커리큘럼 배지(섹션 강조 문구)
+   - 섹션 하단의 강조 문구를 위한 배경/패딩/라운딩 스타일 */
 .curriculum-badge {
   display: inline-flex;
   gap: 8px;
@@ -440,6 +487,8 @@ details[open] summary::after {
 }
 
 /* ── Mobile ─────────────────────────────────── */
+/* 모바일 반응형
+   - 화면 폭이 작을 때 슬라이드 구조를 세로로 쌓이게 전환하여 가독성 확보 */
 @media screen and (max-width: 768px) {
   .curriculum {
     padding: 48px 0;
