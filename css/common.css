@@ -185,9 +185,10 @@ section {
   box-shadow: 0 8px 20px rgba(21, 93, 252, 0.25);
 }
 /* status-item */
-.stat-item {
+.stat-item li {
   display: inline-flex;
   flex-direction: column;
+  align-items: center;
   gap: 1px;
   background: var(--color-white);
 }
