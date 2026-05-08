@@ -1,4 +1,48 @@
 /* ------------ header ------------------------------ */
+.header {
+  position: fixed;
+  height: 64px;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--color-white);
+  z-index: 1000;
+  align-content: center;
+  box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.3);
+}
+header .container {
+  display: flex;
+  justify-content: space-between;
+}
+/* logo */
+header .container .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s ease;
+}
+header .container .logo:hover {
+  transform: scale(1.03);
+}
+/* 메뉴 */
+header .container nav {
+  align-content: center;
+}
+header .container nav ul {
+  display: flex;
+  gap: 24px;
+}
+header .container nav ul li {
+  display: flex;
+  justify-content: center;
+}
+header .container nav .text-nav {
+  font-size: var(--base-font);
+  line-height: var(--base-unit);
+}
+header .container nav .text-nav:hover {
+  color: var(--color-primary);
+}
 
 /* ------------ hero ------------------------------ */
 /* 배경색 */
