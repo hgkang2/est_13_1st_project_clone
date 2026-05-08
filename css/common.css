@@ -181,13 +181,22 @@ section {
   padding: 16px 116px;
 }
 
+.stat-item {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--color-white);
+}
 .stat-item > p {
   text-align: center;
+  font-size: var(--body-s);
+  color: var(--color-gray);
+  line-height: var(--base-unit);
 }
 .stat-item p:first-child {
   background: var(--gradient-blue-green);
   background-clip: text;
-  font-size: var(--body-2xl);
+  font-size: var(--body-xl);
   color: transparent;
 }
 /* 뱃지 */
