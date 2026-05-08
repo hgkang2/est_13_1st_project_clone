@@ -345,9 +345,18 @@ header .container nav .text-nav:hover {
   font-weight: var(--weight-medium);
 }
 
-.naver { background: #e7f9ed; color: #03c75a; }
-.kakao { background: #fff9e6; color: #3c1e1e; }
-.toss { background: #ebf3ff; color: #0064ff; }
+.naver {
+  background: #e7f9ed;
+  color: #03c75a;
+}
+.kakao {
+  background: #fff9e6;
+  color: #3c1e1e;
+}
+.toss {
+  background: #ebf3ff;
+  color: #0064ff;
+}
 
 /* 하단 버튼 */
 .btn-review-more {
@@ -366,11 +375,17 @@ header .container nav .text-nav:hover {
 
 /* 반응형 */
 @media screen and (max-width: 1024px) {
-  .review-grid { grid-template-columns: repeat(2, 1fr); }
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 768px) {
-  .review-grid { grid-size: 1fr; }
-  .review-header { margin-bottom: var(--base-unit); }
+  .review-grid {
+    grid-size: 1fr;
+  }
+  .review-header {
+    margin-bottom: var(--base-unit);
+  }
 }
 
 /* ------------ curriculum(안건욱) ------------------------------ */
@@ -459,8 +474,8 @@ header .container nav .text-nav:hover {
 
 /* 슬라이드 제목 스타일
    - 큰 제목은 줄 바꿈을 허용하여 레이아웃 깨짐 방지 */
-.curriculum-slide-content h3 {
-  font-size: var(--text-heading-xl);
+.curriculum-slide-content h4 {
+  font-size: var(--heading-xl);
   font-weight: 700;
   overflow-wrap: break-word;
 }
