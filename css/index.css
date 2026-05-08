@@ -489,6 +489,10 @@ header .container nav .text-nav:hover {
   margin-bottom: 16px;
   color: var(--color-gray);
 }
+.curriculum-header::after {
+  color: var(--color-primary);
+  content: "좌우로 스크롤하여 커리큘럼을 확인해보세요";
+}
 
 /* ── Track (scroll container) ───────────────── */
 /* 트랙(스크롤 컨테이너)
@@ -503,7 +507,8 @@ header .container nav .text-nav:hover {
   width: 100%;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: none;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary) transparent;
   overscroll-behavior-x: contain;
   scroll-marker-group: after;
 }
@@ -807,122 +812,6 @@ details[open] summary::after {
   background-clip: text;
   font-size: var(--body-xl);
   color: transparent;
-}
-
-/* ── Scroll Markers ─────────────────────────── */
-/* 스크롤 마커(진행 표시 점)
-   - CSS 스크롤 마커 기능을 이용해 현재 슬라이드 상태를 시각화
-   - 지원되지 않는 브라우저는 fallback 스타일을 제공 */
-.curriculum-track::scroll-marker-group {
-  display: inline-flex;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 64px;
-  margin-bottom: 16px;
-}
-
-.curriculum-slide::scroll-marker {
-  width: 12px;
-  height: 12px;
-  background-color: #ccc;
-  content: " ";
-  border-radius: 50%;
-}
-
-.curriculum-slide:first-child::scroll-marker {
-  anchor-name: --first-dot;
-}
-
-.curriculum-slide:last-child::scroll-marker {
-  anchor-name: --last-dot;
-}
-
-.curriculum-slide:nth-child(1)::scroll-marker:target-current {
-  width: 3rem;
-  background: var(--gradient-blue-cyan);
-  border-radius: 9999px;
-}
-
-.curriculum-slide:nth-child(2)::scroll-marker:target-current {
-  width: 3rem;
-  background: var(--gradient-yellow-orange);
-  border-radius: 9999px;
-}
-
-.curriculum-slide:nth-child(3)::scroll-marker:target-current {
-  width: 3rem;
-  background: var(--gradient-purple-pink);
-  border-radius: 9999px;
-}
-
-/* ── Scroll Buttons ─────────────────────────── */
-/* 스크롤 버튼(브라우저 지원 요소)
-   - 좌우 네비게이션 버튼을 위한 스타일 (스크롤 스냅 보완)
-   - 접근성: 포커스 시 아웃라인 표시 */
-.curriculum-track::scroll-button(*) {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0;
-  border: none;
-  outline: none;
-  box-shadow:
-    0 10px 15px -3px #0000001a,
-    0 4px 6px -4px #0000001a;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  background-color: var(--color-white);
-  font-family: "Material Icons";
-  cursor: pointer;
-  border-radius: 50%;
-}
-
-.curriculum-track::scroll-button(left) {
-  content: "\e2ea";
-  position-area: center left;
-  position-anchor: --first-dot;
-  transform: translateX(-1.5rem);
-}
-
-.curriculum-track::scroll-button(right) {
-  content: "\e5e1";
-  position-area: center right;
-  position-anchor: --last-dot;
-  transform: translateX(1.5rem);
-}
-
-.curriculum-track::scroll-button(left):hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-.curriculum-track::scroll-button(right):hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-.curriculum-track::scroll-button(*):disabled:hover {
-  background-color: initial;
-  color: initial;
-  cursor: auto;
-}
-
-.curriculum-track::scroll-button(*):focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 4px;
-}
-
-/* Fallback: 스크롤 마커 미지원 브라우저 처리
-   - `@supports`를 사용해 기능 미지원 시 스크롤바 스타일과 안내 문구 표시 */
-@supports not (scroll-marker-group: after) {
-  .curriculum-track {
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-primary) transparent;
-  }
-
-  .curriculum-header::after {
-    color: var(--color-primary);
-    content: "좌우로 스크롤하여 커리큘럼을 확인해보세요";
-  }
 }
 
 /* ── Badge ──────────────────────────────────── */
