@@ -5,16 +5,19 @@
 .hero {
   background: var(--gradient-bg-blue-green);
 }
+/* hero - 구조 */
+.hero-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+/* content - 좌측 설명 구조 */
 .hero-content {
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 35px;
 }
-.hero-wrapper {
-  display: flex;
-  justify-content: space-between;
-}
+
 /* 뱃지 */
 .badge-wrapper {
   display: flex;
@@ -26,18 +29,19 @@
   background: var(--color-white);
   color: var(--color-primary);
 }
-/* hero 하이라이트 */
+/* hero - 하이라이트 */
 .hero-highlight {
   background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
 }
-/* hero 설명 */
+/* hero - 설명 */
 .hero-proposal p {
   color: var(--color-gray);
   font-size: var(--body-l);
 }
+/* hero - 우측 비디오 */
 .hero-video {
   border-radius: 20px;
   overflow: hidden;
@@ -49,6 +53,7 @@
   border-radius: 20px;
   transform: scale(1.03);
 }
+/* hero -  */
 /* problem */
 
 /* solution */
