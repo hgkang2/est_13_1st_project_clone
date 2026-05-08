@@ -8,14 +8,15 @@
 /* hero - 구조 */
 .hero-wrapper {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 /* content - 좌측 설명 구조 */
 .hero-content {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: flex;
   gap: 35px;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 /* 뱃지 */
@@ -38,13 +39,19 @@
 }
 /* hero - 설명 */
 .hero-proposal p {
-  color: var(--color-gray);
   font-size: var(--body-l);
+  color: var(--color-gray);
+}
+/* hero - 우측 media */
+.hero-media {
+  display: flex;
+  gap: 28px;
+  flex-direction: column;
 }
 /* hero - 우측 비디오 */
 .hero-video {
-  border-radius: 20px;
   overflow: hidden;
+  border-radius: 20px;
 }
 .hero-video iframe {
   display: block;
@@ -53,7 +60,15 @@
   border-radius: 20px;
   transform: scale(1.03);
 }
-/* hero -  */
+/* hero - status */
+.hero-stat-wrapper {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+.hero-stat-wrapper .stat-item {
+  flex: 1;
+}
 /* problem */
 
 /* solution */
@@ -71,47 +86,47 @@
 }
 
 .result .result-header h2 {
-  font-weight: 800;
   margin-bottom: 12px;
+  font-weight: 800;
 }
 
 /* ── Result Grid & Card ── */
 .result .result-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 1200px;
-  width: 90%;
   margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .result .result-card {
+  padding: 48px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
   background-color: rgba(255, 255, 255, 0.12);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 20px;
-  padding: 48px 24px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .result .result-card:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-8px);
   border-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-8px);
 }
 
 .result .result-card .result-icon {
-  font-size: 2.5rem;
-  margin-bottom: 16px;
   display: inline-block;
+  margin-bottom: 16px;
+  font-size: 2.5rem;
 }
 
 .result .result-card .result-value {
+  margin-bottom: 8px;
   font-size: 2.8rem;
   font-weight: 800;
-  margin-bottom: 8px;
   letter-spacing: -1px;
 }
 
@@ -123,10 +138,10 @@
 
 .result .result-card .result-label span {
   display: block;
+  margin-top: 4px;
   font-size: 0.85rem;
   font-weight: 400;
   opacity: 0.7;
-  margin-top: 4px;
 }
 
 /* ── Partner Section ── */
@@ -135,44 +150,44 @@
 }
 
 .result .partner-title {
+  margin-bottom: 24px;
   font-size: 0.85rem;
   font-weight: 600;
-  letter-spacing: 1px;
-  margin-bottom: 24px;
-  opacity: 0.6;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.6;
 }
 
 .result .partner-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 12px;
-  max-width: 1000px;
+  justify-content: center;
+  flex-wrap: wrap;
   margin: 0 auto;
+  max-width: 1000px;
 }
 
 /* 기업 칩 스타일 (유리 효과 공통 적용) */
 .result .partner-chip {
-  background-color: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.18);
   padding: 10px 24px;
-  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.12);
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-white);
-  cursor: pointer;
   transition: all 0.3s ease;
-  outline: none;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 999px;
 }
 
 .result .partner-chip:hover {
-  background-color: rgba(255, 255, 255, 0.25);
-  transform: translateY(-5px);
   border-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-5px);
 }
 
 /* ── Mobile Responsive ── */

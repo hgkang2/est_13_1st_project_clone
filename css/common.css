@@ -74,28 +74,28 @@ body {
 /* 헤딩 위계 */
 .text-heading-3xl {
   font-size: var(--heading-3xl);
-  line-height: calc(var(--base-unit) * 3);
   font-weight: var(--weight-bold);
+  line-height: calc(var(--base-unit) * 3);
 }
 .text-heading-2xl {
   font-size: var(--heading-2xl);
-  line-height: calc(var(--base-unit) * 2);
   font-weight: var(--weight-bold);
+  line-height: calc(var(--base-unit) * 2);
 }
 .text-heading-xl {
   font-size: var(--heading-xl);
-  line-height: calc(var(--base-unit) * 1.168);
   font-weight: var(--weight-bold);
+  line-height: calc(var(--base-unit) * 1.168);
 }
 .text-heading-l {
   font-size: var(--heading-l);
-  line-height: var(--base-unit);
   font-weight: var(--weight-bold);
+  line-height: var(--base-unit);
 }
 .text-logo {
   font-size: var(--heading-l);
-  line-height: var(--base-unit);
   font-weight: var(--weight-bold);
+  line-height: var(--base-unit);
 }
 
 /* 레이아웃 */
@@ -129,9 +129,9 @@ section {
 }
 /* ─── 컨테이너 (Container) ──────────────────────────────── */
 .container {
+  margin: 0 auto;
   width: 100%;
   max-width: var(--container-max);
-  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -170,9 +170,9 @@ section {
   background-color: var(--color-primary);
   color: white;
   text-decoration: none;
+  transition: all 0.2s ease;
   box-sizing: border-box;
   border-radius: 10px;
-  transition: all 0.2s ease;
 }
 .btn-header {
   padding: 4px 9px;
@@ -181,29 +181,29 @@ section {
   padding: 16px 116px;
 }
 .btn:hover {
-  background-color: #2467ff;
   box-shadow: 0 8px 20px rgba(21, 93, 252, 0.25);
+  background-color: #2467ff;
 }
 /* status-item */
-.stat-item li {
+.stat-item {
   display: inline-flex;
-  flex-direction: column;
-  align-items: center;
   gap: 1px;
+  align-items: center;
+  flex-direction: column;
   background: var(--color-white);
 }
 .stat-item > p {
-  text-align: center;
   font-size: var(--body-s);
-  color: var(--color-gray);
   line-height: var(--base-unit);
+  color: var(--color-gray);
+  text-align: center;
 }
 .stat-item strong {
   background: var(--gradient-blue-green);
   background-clip: text;
   font-size: var(--body-xl);
-  color: transparent;
   font-weight: var(--weight-bold);
+  color: transparent;
 }
 /* 뱃지 */
 .badge {
