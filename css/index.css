@@ -49,13 +49,13 @@ header .container nav .text-nav:hover {
 .hero {
   background: var(--gradient-bg-blue-green);
 }
-/* hero - 구조 */
+/* 레이아웃 */
 .hero-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-/* content - 좌측 설명 구조 */
+/* content - 좌측 레이아웃 */
 .hero-content {
   display: flex;
   gap: 35px;
@@ -86,7 +86,7 @@ header .container nav .text-nav:hover {
   font-size: var(--body-l);
   color: var(--color-gray);
 }
-/* hero - 우측 media */
+/* hero - 우측 media 레이아웃 */
 .hero-media {
   display: flex;
   gap: 28px;
@@ -117,7 +117,30 @@ header .container nav .text-nav:hover {
 /* ------------ problem ------------------------------ */
 
 /* ------------ solution ------------------------------ */
-
+/* 레이아웃 */
+.solution {
+  display: flex;
+}
+.solution header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 뱃지 */
+.solution-badge {
+  background: var(--color-primary-10);
+  color: var(--color-primary);
+  font-weight: var(--weight-bold);
+}
+.solution-highlight {
+  color: var(--color-primary);
+}
+.solution-description {
+  color: var(--color-gray);
+  font-size: var(--body-l);
+  line-height: var(--base-unit);
+}
 /* ------------ result ------------------------------ */
 .result {
   padding: 80px 0;
