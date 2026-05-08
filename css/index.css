@@ -1,14 +1,14 @@
 /* ------------ header ------------------------------ */
 .header {
-  position: fixed;
-  height: 64px;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--color-white);
-  z-index: 1000;
   align-content: center;
   box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.3);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  height: 64px;
+  background: var(--color-white);
 }
 header .container {
   display: flex;
@@ -17,8 +17,8 @@ header .container {
 /* logo */
 header .container .logo {
   display: flex;
-  align-items: center;
   gap: 8px;
+  align-items: center;
   transition: 0.3s ease;
 }
 header .container .logo:hover {
@@ -221,13 +221,13 @@ header .container nav .text-nav:hover {
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-white);
+  letter-spacing: 0; /* 자간 초기화 */
+  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
   transition: all 0.3s ease;
   cursor: pointer;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 999px;
-  letter-spacing: 0; /* 자간 초기화 */
-  white-space: nowrap; /* 텍스트 줄바꿈 방지 */
 }
 
 .result .partner-chip:hover {
@@ -262,45 +262,45 @@ header .container nav .text-nav:hover {
 }
 
 .review-header {
-  text-align: center;
   /* 여백을 base-unit(27px)의 배수로 설정하여 일관성 유지 */
   margin-bottom: calc(var(--base-unit) * 2);
+  text-align: center;
 }
 
 .review-subtitle {
-  color: var(--color-gray);
-  font-size: var(--body-l); /* common.css 20px 반영 */
   margin-top: 8px;
+  font-size: var(--body-l); /* common.css 20px 반영 */
+  color: var(--color-gray);
 }
 
 /* Review Grid */
 .review-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: var(--base-unit); /* 27px 간격 */
   margin-bottom: calc(var(--base-unit) * 1.5);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 /* Review Card */
 .review-card {
-  background: var(--color-white);
-  border-radius: 14px; /* icon-box의 곡률과 통일 */
-  box-shadow: 4px 16px 15px -7px rgba(0, 0, 0, 0.1); /* badge의 그림자값 활용 */
   display: flex;
   flex-direction: column;
   border: 1px solid var(--color-gray-20);
+  box-shadow: 4px 16px 15px -7px rgba(0, 0, 0, 0.1); /* badge의 그림자값 활용 */
+  background: var(--color-white);
   transition: all 0.2s ease; /* .btn의 트랜지션 타임 0.2s와 통일 */
+  border-radius: 14px; /* icon-box의 곡률과 통일 */
 }
 
 .review-card:hover {
-  transform: translateY(-8px);
   border-color: var(--color-primary-75);
+  transform: translateY(-8px);
 }
 
 /* 별점 영역 */
 .review-rating {
-  color: #ffb800; /* 포인트 컬러 */
   margin: 20px 20px 0; /* 내부 위치만 마진으로 고정 */
+  color: #ffb800; /* 포인트 컬러 */
 }
 
 .review-rating span {
@@ -309,27 +309,27 @@ header .container nav .text-nav:hover {
 
 /* 후기 본문 */
 .review-text {
+  flex-grow: 1;
+  margin: 16px 20px calc(var(--base-unit) * 1);
   font-size: var(--body-m); /* 16px */
   line-height: var(--base-unit); /* 27px */
   color: var(--color-black);
-  margin: 16px 20px calc(var(--base-unit) * 1);
-  flex-grow: 1;
 }
 
 /* 작성자 정보 영역 */
 .review-author {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  border-top: 1px solid var(--color-bg-gray);
+  justify-content: space-between;
   margin: 0 20px 20px;
   padding-top: 16px;
+  border-top: 1px solid var(--color-bg-gray);
 }
 
 .author-name {
   display: block;
-  font-weight: var(--weight-bold);
   font-size: var(--body-m);
+  font-weight: var(--weight-bold);
 }
 
 .author-path {
@@ -340,9 +340,9 @@ header .container nav .text-nav:hover {
 /* 기업 배지 - common.css의 뱃지 느낌 차용 */
 .company-badge {
   padding: 4px 12px;
-  border-radius: 9999px;
   font-size: 12px;
   font-weight: var(--weight-medium);
+  border-radius: 9999px;
 }
 
 .naver {
@@ -361,11 +361,11 @@ header .container nav .text-nav:hover {
 /* 하단 버튼 */
 .btn-review-more {
   display: block;
-  text-align: center;
+  border: 1px solid var(--color-primary);
   width: 100%;
   background-color: transparent;
   color: var(--color-primary);
-  border: 1px solid var(--color-primary);
+  text-align: center;
 }
 
 .btn-review-more:hover {
