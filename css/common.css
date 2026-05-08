@@ -173,12 +173,17 @@ section {
   text-decoration: none;
   box-sizing: border-box;
   border-radius: 10px;
+  transition: 0.3s ease;
 }
 .btn-header {
   padding: 4px 9px;
 }
 .btn-mob {
   padding: 16px 116px;
+}
+.btn:hover {
+  background-color: var(--color-primary-75);
+  transform: scale(1.03);
 }
 
 .stat-item > p {
