@@ -963,5 +963,138 @@ details[open] summary::after {
 }
 
 /* ------------ cta ------------------------------ */
+.cta{
+  padding:40px 0;
+  color: var(--color-black);
+  background-color: #ffffff;
+  text-align: center;
+}
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 45px;
+}
+.cta-heading {  
+  font-size: var(--heading-2xl);
+  font-weight: var(--weight-bold);
+  line-height: calc(var(--base-unit) * 2);
+  color: var(--color-black);
+}
+
+.gradient-text{
+  background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
+  background-clip: text;
+  color: transparent;
+  }
+
+.cta-desc{
+  color: var(--color-gray);
+  font-size: var(--body-l);
+  line-height: 1.5;
+}
+.cta-action {
+  margin-top: 8px;
+}
+
+.cta-divider {
+  border: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  margin: 45px 0;
+}
+.cta-stats {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  align-items: center;
+}
+.cta-stats .stat-item p:first-child {
+  font-size: var(--body-2xl);
+  font-weight: var(--weight-bold);
+
+  line-height: 40px;
+  background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
+  background-clip: text;
+  color: transparent;
+
+}
+.stat-item p:last-child {
+  color: var(--color-gray);
+  font-size: var(--body-s);
+  color: var(--color-gray);
+}
 
 /* ------------ footer ------------------------------ */
+.footer {
+  background-color: #1a1a1a;
+  color: var(--color-white);
+  padding: 30px 0;
+  font-size: var(--body-s);
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: var(--body-s);
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-white);
+}
+
+
+.footer-links .bar {
+  color: rgba(255, 255, 255, 0.3);
+  margin: 0 5px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.footer-social a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+
+.footer-social a:hover {
+  color: var(--color-white);
+}
+
+
+.footer-info {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+}
+
+.footer-info address,
+.footer-info p {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--body-s);
+  line-height: 1.8;
+  font-style: normal;
+}
+
+.footer-info .copyright {
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.35);
+}
