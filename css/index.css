@@ -116,6 +116,7 @@ header .container nav .text-nav:hover {
 }
 .hero-stat-wrapper .stat-item {
   flex: 1;
+  border-radius: 14px;
 }
 /* 아래 화살표 */
 .arrow-down {
