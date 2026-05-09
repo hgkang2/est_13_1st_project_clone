@@ -130,8 +130,10 @@ section {
 /* ─── 컨테이너 (Container) ──────────────────────────────── */
 .container {
   margin: 0 auto;
+  padding: 16px;
   width: 100%;
   max-width: var(--container-max);
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
