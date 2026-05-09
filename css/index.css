@@ -47,8 +47,8 @@ header .container nav .text-nav:hover {
 /* ------------ hero ------------------------------ */
 /* 배경색 */
 .hero {
-  background: var(--gradient-bg-blue-green);
   position: relative;
+  background: var(--gradient-bg-blue-green);
 }
 /* 레이아웃 */
 .hero-wrapper {
@@ -116,10 +116,10 @@ header .container nav .text-nav:hover {
 }
 /* 아래 화살표 */
 .arrow-down {
-  font-size: var(--body-s);
   position: absolute;
   bottom: 36px;
   left: 50%;
+  font-size: var(--body-s);
   animation: arrow-bounce 1.5s infinite ease-in-out;
 }
 @keyframes arrow-bounce {
@@ -138,15 +138,15 @@ header .container nav .text-nav:hover {
 /* 레이아웃 */
 .solution {
   display: flex;
-  flex-direction: column;
   gap: 29px;
+  flex-direction: column;
 }
 .solution header {
   display: flex;
+  gap: 29px;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  gap: 29px;
 }
 /* 뱃지 */
 .solution-badge {
@@ -166,8 +166,8 @@ header .container nav .text-nav:hover {
 /* 카드 */
 .solution-card-container {
   display: flex;
-  flex-direction: column;
   gap: 25px;
+  flex-direction: column;
 }
 .solution-card-wrapper {
   display: flex;
@@ -177,11 +177,11 @@ header .container nav .text-nav:hover {
   display: flex;
   gap: 16px;
   align-items: center;
+  flex: 1;
   padding: 24px;
   border: 1px solid var(--color-gray-20);
   box-sizing: border-box;
   border-radius: 16px;
-  flex: 1;
 }
 .solution-card-text {
   display: flex;
@@ -489,10 +489,6 @@ header .container nav .text-nav:hover {
   margin-bottom: 16px;
   color: var(--color-gray);
 }
-.curriculum-header::after {
-  color: var(--color-primary);
-  content: "좌우로 스크롤하여 커리큘럼을 확인해보세요";
-}
 
 /* ── Track (scroll container) ───────────────── */
 /* 트랙(스크롤 컨테이너)
@@ -503,14 +499,11 @@ header .container nav .text-nav:hover {
   display: flex;
   gap: 32px;
   flex-wrap: nowrap;
-  overflow-x: scroll;
+  overflow-x: hidden;
   width: 100%;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-primary) transparent;
   overscroll-behavior-x: contain;
-  scroll-marker-group: after;
 }
 
 /* 포커스 스타일
@@ -532,6 +525,7 @@ header .container nav .text-nav:hover {
   margin: 0;
   padding: 48px;
   border: 1px solid #0000001a;
+  position: relative;
   max-width: 100%;
   background-color: var(--color-white);
   scroll-snap-align: center;
@@ -812,6 +806,99 @@ details[open] summary::after {
   background-clip: text;
   font-size: var(--body-xl);
   color: transparent;
+}
+/* 버튼 작동 */
+
+.next,
+.previous {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    0 10px 15px -3px #0000001a,
+    0 4px 6px -4px #0000001a;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #000;
+  border-radius: 50%;
+}
+
+.previous {
+  transform: translate(-48px, -50%);
+}
+
+.next {
+  right: 0;
+  transform: translate(0, -50%);
+}
+
+.curriculum-track:nth-child(2) :where(.next, .previous) {
+  display: flex;
+}
+
+/* 내비게이션 그룹 */
+.navigation-group {
+  display: inline-flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-inline: auto;
+}
+.navigation-group .material-icons-outlined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.navigation-indicators {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-inline: auto;
+}
+.navigation-indicators > * {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+.curriculum-track:has(.curriculum-slide:nth-child(1))
+  ~ .navigation-indicators
+  > *:nth-child(1) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
+}
+
+.curriculum-track:has(.curriculum-slide:nth-child(2):target)
+  ~ .navigation-indicators
+  > *:nth-child(2) {
+  width: 3rem;
+  background: var(--gradient-yellow-orange);
+  border-radius: 999px;
+}
+
+.curriculum-track:has(.curriculum-slide:nth-child(3):target)
+  ~ .navigation-indicators
+  > *:nth-child(3) {
+  width: 3rem;
+  background: var(--gradient-purple-pink);
+  border-radius: 999px;
+}
+.curriculum-track:has(:target:not(:first-child))
+  ~ .navigation-indicators
+  > *:first-child {
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #ccc;
+  border-radius: 50%;
 }
 
 /* ── Badge ──────────────────────────────────── */
