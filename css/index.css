@@ -47,8 +47,8 @@ header .container nav .text-nav:hover {
 /* ------------ hero ------------------------------ */
 /* 배경색 */
 .hero {
-  background: var(--gradient-bg-blue-green);
   position: relative;
+  background: var(--gradient-bg-blue-green);
 }
 /* 레이아웃 */
 .hero-wrapper {
@@ -85,6 +85,7 @@ header .container nav .text-nav:hover {
 /* hero - 설명 */
 .hero-proposal p {
   font-size: var(--body-l);
+  line-height: var(--base-unit);
   color: var(--color-gray);
 }
 .hero-proposal p:first-child {
@@ -116,14 +117,16 @@ header .container nav .text-nav:hover {
 }
 .hero-stat-wrapper .stat-item {
   flex: 1;
+  border-radius: 14px;
 }
 /* 아래 화살표 */
 .arrow-down {
-  font-size: var(--body-s);
   position: absolute;
-  bottom: 36px;
+  bottom: calc(var(--base-unit) * 2);
   left: 50%;
+  font-size: var(--body-s);
   animation: arrow-bounce 1.5s infinite ease-in-out;
+  transform: translateX(-50%);
 }
 @keyframes arrow-bounce {
   0%,
@@ -138,8 +141,8 @@ header .container nav .text-nav:hover {
 /* ------hero - 태블릿----- */
 @media (max-width: 1160px) {
   .hero-wrapper {
+    gap: calc(var(--base-unit) * 2);
     flex-direction: column;
-    gap: 60px;
   }
   .hero-content {
     align-items: center;
@@ -149,6 +152,11 @@ header .container nav .text-nav:hover {
   }
   .hero-proposal {
     text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .arrow-down {
+    bottom: calc(var(--base-unit) * 1);
   }
 }
 @media (max-width: 650px) {
@@ -171,6 +179,19 @@ header .container nav .text-nav:hover {
     width: 328px;
     aspect-ratio: 16 / 9;
   }
+  .hero-proposal p {
+    font-size: var(--body-s);
+  }
+  .mobile-br {
+    display: block;
+  }
+  .hero-content .btn {
+    align-self: stretch;
+    text-align: center;
+  }
+  .arrow-down {
+    bottom: calc(var(--base-unit) * 0.5);
+  }
 }
 
 /* ------------ problem ------------------------------ */
@@ -179,15 +200,15 @@ header .container nav .text-nav:hover {
 /* 레이아웃 */
 .solution {
   display: flex;
-  flex-direction: column;
   gap: 29px;
+  flex-direction: column;
 }
 .solution header {
   display: flex;
+  gap: 29px;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  gap: 29px;
 }
 /* 뱃지 */
 .solution-badge {
@@ -207,8 +228,8 @@ header .container nav .text-nav:hover {
 /* 카드 */
 .solution-card-container {
   display: flex;
-  flex-direction: column;
   gap: 25px;
+  flex-direction: column;
 }
 .solution-card-wrapper {
   display: flex;
@@ -218,11 +239,11 @@ header .container nav .text-nav:hover {
   display: flex;
   gap: 16px;
   align-items: center;
+  flex: 1;
   padding: 24px;
   border: 1px solid var(--color-gray-20);
   box-sizing: border-box;
   border-radius: 16px;
-  flex: 1;
 }
 .solution-card-text {
   display: flex;
@@ -1006,15 +1027,15 @@ details[open] summary::after {
 /* ------------ cta ------------------------------ */
 .cta {
   padding: 40px 0;
-  color: var(--color-black);
   background-color: #ffffff;
+  color: var(--color-black);
   text-align: center;
 }
 .cta-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 45px;
+  align-items: center;
+  flex-direction: column;
 }
 .cta-heading {
   font-size: var(--heading-2xl);
@@ -1030,52 +1051,52 @@ details[open] summary::after {
 }
 
 .cta-desc {
-  color: var(--color-gray);
   font-size: var(--body-l);
   line-height: 1.5;
+  color: var(--color-gray);
 }
 .cta-action {
   margin-top: 8px;
 }
 
 .cta-divider {
+  margin: 45px 0;
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
-  margin: 45px 0;
 }
 .cta-stats {
   display: flex;
   gap: 80px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .cta-stats .stat-item p:first-child {
+  background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
+  background-clip: text;
   font-size: var(--body-2xl);
   font-weight: var(--weight-bold);
 
   line-height: 40px;
-  background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
-  background-clip: text;
   color: transparent;
 }
 .stat-item p:last-child {
-  color: var(--color-gray);
   font-size: var(--body-s);
+  color: var(--color-gray);
   color: var(--color-gray);
 }
 
 /* ------------ footer ------------------------------ */
 .footer {
-  background-color: #1a1a1a;
-  color: var(--color-white);
   padding: 30px 0;
+  background-color: #1a1a1a;
   font-size: var(--body-s);
+  color: var(--color-white);
 }
 
 .footer-top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 24px;
 }
 
@@ -1086,9 +1107,9 @@ details[open] summary::after {
 }
 
 .footer-links a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
   font-size: var(--body-s);
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -1097,8 +1118,8 @@ details[open] summary::after {
 }
 
 .footer-links .bar {
-  color: rgba(255, 255, 255, 0.3);
   margin: 0 5px;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .footer-social {
@@ -1108,9 +1129,9 @@ details[open] summary::after {
 }
 
 .footer-social a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
   font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
   transition: color 0.3s ease;
 }
 
@@ -1119,16 +1140,16 @@ details[open] summary::after {
 }
 
 .footer-info {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-info address,
 .footer-info p {
-  color: rgba(255, 255, 255, 0.5);
   font-size: var(--body-s);
-  line-height: 1.8;
   font-style: normal;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-info .copyright {
