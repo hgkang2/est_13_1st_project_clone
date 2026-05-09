@@ -121,8 +121,9 @@ header .container nav .text-nav:hover {
 .arrow-down {
   font-size: var(--body-s);
   position: absolute;
-  bottom: 36px;
+  bottom: 54px;
   left: 50%;
+  transform: translateX(-50%);
   animation: arrow-bounce 1.5s infinite ease-in-out;
 }
 @keyframes arrow-bounce {
