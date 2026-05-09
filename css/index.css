@@ -228,7 +228,7 @@ header .container nav .text-nav:hover {
 /* 카드 */
 .solution-card-container {
   display: flex;
-  gap: 25px;
+  gap: 24px;
   flex-direction: column;
 }
 .solution-card-wrapper {
@@ -253,6 +253,26 @@ header .container nav .text-nav:hover {
 .solution-card-desc {
   font-size: var(--body-s);
   line-height: var(--base-unit);
+}
+@media (max-width: 768px) {
+  .solution-card-wrapper {
+    flex-direction: column;
+  }
+}
+@media (max-width: 360px) {
+  .solution,
+  .solution header,
+  .solution-card-container,
+  .solution-card-wrapper {
+    gap: 16px;
+  }
+  .solution header h3 {
+    font-size: var(--heading-xl);
+    line-height: 37px;
+  }
+  .solution-desc {
+    font-size: var(--body-s);
+  }
 }
 /* ------------ result ------------------------------ */
 .result {
