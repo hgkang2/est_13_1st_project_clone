@@ -100,16 +100,16 @@ body {
 
 /* 레이아웃 */
 section {
-  padding: calc(var(--base-unit) * 3) 0;
+  padding: calc(var(--base-unit) * 4) 0;
 }
 @media (max-width: 768px) {
   section {
-    padding: calc(var(--base-unit) * 3) 0;
+    padding: calc(var(--base-unit) * 2) 0;
   }
 }
 @media (max-width: 360px) {
   section {
-    padding: calc(var(--base-unit) * 3) 0;
+    padding: calc(var(--base-unit) * 1) 0;
   }
 }
 .hidden {
@@ -130,7 +130,7 @@ section {
 /* ─── 컨테이너 (Container) ──────────────────────────────── */
 .container {
   margin: 0 auto;
-  padding: 16px;
+  padding: 0 16px;
   width: 100%;
   max-width: var(--container-max);
   box-sizing: border-box;
@@ -138,14 +138,14 @@ section {
 
 @media (max-width: 768px) {
   .container {
-    padding: calc(var(--base-unit) * 2) 0;
+    padding: 0 40px;
     max-width: var(--container-tablet);
   }
 }
 
 @media (max-width: 360px) {
   .container {
-    padding: var(--base-unit) 0;
+    padding: 0 16px;
     max-width: 328px;
   }
 }

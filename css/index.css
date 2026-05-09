@@ -87,6 +87,9 @@ header .container nav .text-nav:hover {
   font-size: var(--body-l);
   color: var(--color-gray);
 }
+.hero-proposal p:first-child {
+  margin-bottom: 11px;
+}
 /* hero - 우측 media 레이아웃 */
 .hero-media {
   display: flex;
@@ -132,6 +135,44 @@ header .container nav .text-nav:hover {
     transform: translateY(10px);
   }
 }
+/* ------hero - 태블릿----- */
+@media (max-width: 1160px) {
+  .hero-wrapper {
+    flex-direction: column;
+    gap: 60px;
+  }
+  .hero-content {
+    align-items: center;
+  }
+  .hero-content h2 {
+    text-align: center;
+  }
+  .hero-proposal {
+    text-align: center;
+  }
+}
+@media (max-width: 650px) {
+  .hero-content h2 {
+    font-size: clamp(var(--heading-xl), 11vw, var(--heading-3xl));
+    line-height: clamp(37px, 11vw, calc(var(--base-unit) * 3));
+  }
+  .hero-video iframe {
+    width: clamp(328px, 92vw, 600px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+@media (max-width: 360px) {
+  .hero-content h2 {
+    font-size: var(--heading-xl);
+    line-height: 37px;
+  }
+  .hero-video iframe {
+    width: 328px;
+    aspect-ratio: 16 / 9;
+  }
+}
+
 /* ------------ problem ------------------------------ */
 
 /* ------------ solution ------------------------------ */
@@ -963,8 +1004,8 @@ details[open] summary::after {
 }
 
 /* ------------ cta ------------------------------ */
-.cta{
-  padding:40px 0;
+.cta {
+  padding: 40px 0;
   color: var(--color-black);
   background-color: #ffffff;
   text-align: center;
@@ -975,20 +1016,20 @@ details[open] summary::after {
   align-items: center;
   gap: 45px;
 }
-.cta-heading {  
+.cta-heading {
   font-size: var(--heading-2xl);
   font-weight: var(--weight-bold);
   line-height: calc(var(--base-unit) * 2);
   color: var(--color-black);
 }
 
-.gradient-text{
+.gradient-text {
   background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
   background-clip: text;
   color: transparent;
-  }
+}
 
-.cta-desc{
+.cta-desc {
   color: var(--color-gray);
   font-size: var(--body-l);
   line-height: 1.5;
@@ -1016,7 +1057,6 @@ details[open] summary::after {
   background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
   background-clip: text;
   color: transparent;
-
 }
 .stat-item p:last-child {
   color: var(--color-gray);
@@ -1056,7 +1096,6 @@ details[open] summary::after {
   color: var(--color-white);
 }
 
-
 .footer-links .bar {
   color: rgba(255, 255, 255, 0.3);
   margin: 0 5px;
@@ -1075,11 +1114,9 @@ details[open] summary::after {
   transition: color 0.3s ease;
 }
 
-
 .footer-social a:hover {
   color: var(--color-white);
 }
-
 
 .footer-info {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
