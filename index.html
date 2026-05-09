@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
+
   <body>
     <!-- header - 김기용 -->
     <header class="header">
@@ -63,7 +64,7 @@
       <!-- hero sectiton - 송민혁 -->
       <section class="hero">
         <div class="container hero-wrapper">
-          <div class="hero-content">
+          <header class="hero-content">
             <div class="badge-wrapper">
               <div class="badge">
                 <span class="material-icons-outlined">auto_awesome</span>
@@ -81,11 +82,19 @@
               성장 여정
             </h2>
             <div class="hero-proposal">
-              <p>4개월 만에 프론트엔드 개발자로 커리어를 시작하세요.</p>
-              <p>이스트캠프에 참여하고 시장에서 찾는 전문가로 거듭나세요!</p>
+              <p>
+                4개월 만에 프론트엔드 개발자로
+                <span class="mobile-br">커리어를 시작하세요.</span>
+              </p>
+              <p>
+                이스트캠프에 참여하고
+                <span class="mobile-br">
+                  시장에서 찾는 전문가로 거듭나세요!
+                </span>
+              </p>
             </div>
             <a href="#" class="btn">지원하기</a>
-          </div>
+          </header>
           <div class="hero-media">
             <div class="hero-video">
               <iframe
@@ -120,66 +129,70 @@
       </section>
 
       <!-- solution section - 송민혁 -->
-      <section class="container solution">
-        <header>
-          <div class="badge solution-badge">
-            <span>Why ESTcamp?</span>
-          </div>
-          <h3 class="text-heading-2xl">
-            이스트캠프가
-            <br />
-            <span class="solution-highlight">특별한 이유</span>
-          </h3>
-          <p class="solution-desc">
-            비전공자를 위한 체계적 교육과
-            <br />
-            확실한 취업 보장까지
-          </p>
-        </header>
-        <ul class="solution-card-container">
-          <li class="solution-card-wrapper">
-            <div class="solution-card">
-              <div class="icon-box">
-                <span class="material-icons-outlined">business</span>
-              </div>
-              <div class="solution-card-text">
-                <h4 class="text-heading-l">EST soft 직접 운영</h4>
-                <p class="solution-card-desc">대기업의 체계적인 교육 시스템</p>
-              </div>
+      <section>
+        <div class="container solution">
+          <header>
+            <div class="badge solution-badge">
+              <span>Why ESTcamp?</span>
             </div>
-            <div class="solution-card">
-              <div class="icon-box">
-                <span class="material-icons-outlined">people</span>
+            <h3 class="text-heading-2xl">
+              이스트캠프가
+              <br />
+              <span class="solution-highlight">특별한 이유</span>
+            </h3>
+            <p class="solution-desc">
+              비전공자를 위한 체계적 교육과
+              <br />
+              확실한 취업 보장까지
+            </p>
+          </header>
+          <ul class="solution-card-container">
+            <li class="solution-card-wrapper">
+              <div class="solution-card">
+                <div class="icon-box">
+                  <span class="material-icons-outlined">business</span>
+                </div>
+                <div class="solution-card-text">
+                  <h4 class="text-heading-l">EST soft 직접 운영</h4>
+                  <p class="solution-card-desc">
+                    대기업의 체계적인 교육 시스템
+                  </p>
+                </div>
               </div>
-              <div class="solution-card-text">
-                <h4 class="text-heading-l">현업 개발자 멘토링</h4>
-                <p class="solution-card-desc">실무 경험 풍부한 멘토 배정</p>
+              <div class="solution-card">
+                <div class="icon-box">
+                  <span class="material-icons-outlined">people</span>
+                </div>
+                <div class="solution-card-text">
+                  <h4 class="text-heading-l">현업 개발자 멘토링</h4>
+                  <p class="solution-card-desc">실무 경험 풍부한 멘토 배정</p>
+                </div>
               </div>
-            </div>
-          </li>
-          <li class="solution-card-wrapper">
-            <div class="solution-card">
-              <div class="icon-box">
-                <span class="material-icons-outlined">trending_up</span>
+            </li>
+            <li class="solution-card-wrapper">
+              <div class="solution-card">
+                <div class="icon-box">
+                  <span class="material-icons-outlined">trending_up</span>
+                </div>
+                <div class="solution-card-text">
+                  <h4 class="text-heading-l">실전 중심 커리큘럼</h4>
+                  <p class="solution-card-desc">
+                    프로젝트 기반 학습으로 포트폴리오 완성
+                  </p>
+                </div>
               </div>
-              <div class="solution-card-text">
-                <h4 class="text-heading-l">실전 중심 커리큘럼</h4>
-                <p class="solution-card-desc">
-                  프로젝트 기반 학습으로 포트폴리오 완성
-                </p>
+              <div class="solution-card">
+                <div class="icon-box">
+                  <span class="material-icons-outlined">workspace_premium</span>
+                </div>
+                <div class="solution-card-text">
+                  <h4 class="text-heading-l">확실한 취업 연계</h4>
+                  <p class="solution-card-desc">EST soft 및 협력사 채용 지원</p>
+                </div>
               </div>
-            </div>
-            <div class="solution-card">
-              <div class="icon-box">
-                <span class="material-icons-outlined">workspace_premium</span>
-              </div>
-              <div class="solution-card-text">
-                <h4 class="text-heading-l">확실한 취업 연계</h4>
-                <p class="solution-card-desc">EST soft 및 협력사 채용 지원</p>
-              </div>
-            </div>
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <!-- result section - 강형규 -->
@@ -679,11 +692,94 @@
         </div>
       </section>
       <!-- //안건욱 -->
+
       <!-- cta section - 남윤동 -->
       <section>cta section - 남윤동</section>
+      <section class="cta" aria-labelledby="cta-title">
+        <div class="container">
+          <div class="cta-content">
+            <div class="badge">
+              <span class="material-icons-outlined">auto_awesome</span>
+              <span>프론트엔드 개발 14기 모집 중</span>
+            </div>
+
+            <h2 id="cta-title" class="cta-heading">
+              4개월 후,
+              <br />
+              <span class="gradient-text">프론트엔드 개발자</span>
+              로
+            </h2>
+            <p class="cta-desc">
+              4개월 만에 프론트 엔드 개발자로의 전환,
+              <br />
+              이스트캠프와 함께라면 가능합니다
+            </p>
+
+            <div class="cta-action">
+              <a href="#" class="btn">지원하기</a>
+            </div>
+          </div>
+          <hr class="cta-divider" />
+
+          <div class="cta-stats">
+            <div class="stat-item">
+              <p>4개월</p>
+              <p>완성기간</p>
+            </div>
+
+            <div class="stat-item">
+              <p>92%</p>
+              <p>취업성공율</p>
+            </div>
+
+            <div class="stat-item">
+              <p>EST soft</p>
+              <p>취업 연계</p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- footer - 남윤동 -->
     <footer>footer - 남윤동</footer>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-top">
+          <!-- 왼쪽: 주요 정책 및 문의 링크 -->
+          <div class="footer-links">
+            <a href="#">개인정보처리방침</a>
+            <span class="bar">|</span>
+            <a
+              href="https://estfamily.career.greetinghr.com/ko/esgsustainability"
+              target="_blank">
+              ESTfamily
+            </a>
+            <span class="bar">|</span>
+            <a href="gamil.com" target="_blank">문의메일</a>
+          </div>
+          <div class="footer-social">
+            <a
+              href="http://pf.kakao.com/_xdIsun"
+              aria-label="KakaoTalk"
+              target="_blank">
+              <i class="fa-brands fa-kakao-talk"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/estbootcamp/"
+              aria-label="Instagram"
+              target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-info">
+          <address>서울시 서초구 반포대로 3, 이스트빌딩</address>
+          <p>문의처 : 010-5084-4620 (평일 오전 10시~오후 5시)</p>
+          <p class="copyright">&copy; 2026 ESTfamily All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
