@@ -197,7 +197,177 @@ header .container nav .text-nav:hover {
 }
 
 /* ------------ problem ------------------------------ */
+.problem {
+  background-color: var(--color-white);
+}
+.problem-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+}
+.problem-content {
+  text-align: center;
+  display: flex;
+  gap: 18px;
+}
+.problem-content h2 span {
+  color: var(--color-primary);
+}
+.problem-content p {
+  font-size: var(--body-l);
+  font-weight: var(--weight-regular);
+  line-height: var(--base-unit);
+}
+/*problem-slide */
+.problem-slide {
+  overflow: hidden;
+}
+.problem-slide input {
+  display: none;
+}
 
+.problem-slide .slide {
+  width: 200%;
+  display: flex;
+  gap: 28px;
+}
+.problem-slide .slide .question {
+  width: calc(100% / 3);
+  border: 1px solid #0000001a;
+  border-radius: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 21px;
+  gap: 16px;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+.question .answer-box {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  border-radius: 1.5rem;
+}
+.question .answer-box span {
+  color: var(--color-primary);
+}
+.question .answer-box .answer {
+  font-size: var(--body-s);
+  font-weight: var(--weight-regular);
+  line-height: var(--base-unit);
+}
+
+.question .answer-box .answer p:nth-child(1) {
+  color: var(--color-primary);
+}
+/* 슬라이드 */
+.problem-slide [id="slide01"]:checked ~ .slide .question {
+  transform: translateX(0);
+}
+.problem-slide [id="slide02"]:checked ~ .slide .question {
+  transform: translateX(calc(-100% + -28px));
+}
+.problem-slide [id="slide03"]:checked ~ .slide .question {
+  transform: translateX(calc(-200% + -56px));
+}
+.problem-slide [id="slide04"]:checked ~ .slide .question {
+  transform: translateX(calc(-300% + -84px));
+}
+/* 버튼 */
+.slide-button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 50px;
+  align-content: center;
+}
+.slide-button label {
+  display: none;
+  text-align: center;
+  align-content: center;
+  box-shadow:
+    0 10px 15px -3px #0000001a,
+    0 4px 6px -4px #0000001a;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #000;
+  border-radius: 50%;
+  top: 7px;
+}
+.slide-button label:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+.slide-button .left {
+  transform: translateX(-200%);
+}
+.slide-button .right {
+  transform: translateX(100%);
+}
+
+.problem-slide [id="slide01"]:checked ~ .slide-button a label:nth-child(1) {
+  display: inline-block;
+}
+.problem-slide [id="slide02"]:checked ~ .slide-button a label:nth-child(2) {
+  display: inline-block;
+}
+.problem-slide [id="slide03"]:checked ~ .slide-button a label:nth-child(3) {
+  display: inline-block;
+}
+.problem-slide [id="slide04"]:checked ~ .slide-button a label:nth-child(4) {
+  display: inline-block;
+}
+/* nav */
+.problem-nav {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-inline: auto;
+}
+.problem-nav > * {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.problem-slide
+  [id="slide01"]:checked
+  ~ .slide-button
+  .problem-nav
+  div:nth-child(1) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
+}
+.problem-slide
+  [id="slide02"]:checked
+  ~ .slide-button
+  .problem-nav
+  div:nth-child(2) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
+}
+.problem-slide
+  [id="slide03"]:checked
+  ~ .slide-button
+  .problem-nav
+  div:nth-child(3) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
+}
+.problem-slide
+  [id="slide04"]:checked
+  ~ .slide-button
+  .problem-nav
+  div:nth-child(4) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
+}
 /* ------------ solution ------------------------------ */
 /* 레이아웃 */
 .solution {
