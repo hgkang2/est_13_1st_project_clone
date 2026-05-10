@@ -863,7 +863,7 @@ header .container nav .text-nav:hover {
 }
 
 .curriculum-core-title::after,
-.curriculum-ai-title {
+.curriculum-ai-title::after {
   font-family: "Material Icons";
   transition: transform 0.3s;
   content: "\e313";
