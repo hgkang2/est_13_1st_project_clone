@@ -823,25 +823,8 @@ header .container nav .text-nav:hover {
 
 /* ── Details / Accordion base ───────────────── */
 /* details/summary 아코디언 기본
-   - `details` 요소를 커스텀 애니메이션으로 열고 닫기 위해 스타일을 적용
-   - `::details-content`는 브라우저별 구현 차이를 고려해 트랜지션을 설정 
-   - `interpolate-size: allow-keywords;`는 `block-size`를 `auto`로 애니매이션 가능하게 함*/
 details {
   overflow: hidden;
-  interpolate-size: allow-keywords;
-}
-
-/* `transition-behavior: allow-discrete;`는 `content-visibility`에 애니메이션 적용 가능하게 함 */
-details::details-content {
-  transition:
-    block-size 0.3s,
-    content-visibility 0.3s;
-  block-size: 0;
-  transition-behavior: allow-discrete;
-}
-
-details[open]::details-content {
-  block-size: auto;
 }
 
 /* summary(아코디언 제목)
