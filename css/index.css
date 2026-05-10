@@ -3,9 +3,9 @@
   align-content: center;
   box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.3);
   position: sticky;
-  height: 64px;
   top: 0;
   z-index: 1000;
+  height: 64px;
   height: 64px;
   background: var(--color-white);
 }
@@ -202,13 +202,13 @@ header .container nav .text-nav:hover {
 }
 .problem-wrapper {
   display: flex;
-  flex-direction: column;
   gap: 54px;
+  flex-direction: column;
 }
 .problem-content {
-  text-align: center;
   display: flex;
   gap: 18px;
+  text-align: center;
 }
 .problem-content h2 span {
   color: var(--color-primary);
@@ -227,20 +227,20 @@ header .container nav .text-nav:hover {
 }
 
 .problem-slide .slide {
-  width: 200%;
   display: flex;
   gap: 28px;
+  width: 200%;
 }
 .problem-slide .slide .question {
-  width: calc(100% / 3);
-  border: 1px solid #0000001a;
-  border-radius: 1.5rem;
   display: flex;
+  gap: 16px;
   flex-direction: column;
   padding: 25px 21px;
-  gap: 16px;
+  border: 1px solid #0000001a;
   position: relative;
+  width: calc(100% / 3);
   transition: transform 0.5s ease;
+  border-radius: 1.5rem;
 }
 .question .answer-box {
   display: flex;
@@ -276,26 +276,26 @@ header .container nav .text-nav:hover {
 }
 /* 버튼 */
 .slide-button {
+  align-content: center;
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
   height: 50px;
-  align-content: center;
+  transform: translateX(-50%);
 }
 .slide-button label {
   display: none;
-  text-align: center;
   align-content: center;
   box-shadow:
     0 10px 15px -3px #0000001a,
     0 4px 6px -4px #0000001a;
   position: absolute;
+  top: 7px;
   width: 40px;
   height: 40px;
   background-color: white;
   color: #000;
+  text-align: center;
   border-radius: 50%;
-  top: 7px;
 }
 .slide-button label:hover {
   background-color: var(--color-primary);
@@ -1117,6 +1117,7 @@ details[open] summary::after {
   border-radius: 50%;
 }
 
+/* 슬라이드 선택됐을때 필모양으로 변경 */
 .curriculum-track:has(.curriculum-slide:nth-child(1))
   ~ .curriculum-navigation
   .navigation-indicators
