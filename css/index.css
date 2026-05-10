@@ -842,21 +842,23 @@ header .container nav .text-nav:hover {
   cursor: pointer;
 }
 
-.curriculum-core-title:focus-visible .curriculum-ai-title:focus-visible {
+.curriculum-core-title:focus-visible,
+.curriculum-ai-title:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 4px;
   border-radius: 8px;
 }
 
-.curriculum-core-title > span .curriculum-ai-title > span {
+.curriculum-core-title > span,
+.curriculum-ai-title > span {
   display: inline-flex;
   gap: 8px;
   align-items: center;
 }
 
 /* 기본 마커를 material icons로 대체 */
-.curriculum-core-title::-webkit-details-marker
-  .curriculum-ai-title::-webkit-details-marker {
+.curriculum-core-title::-webkit-details-marker,
+.curriculum-ai-title::-webkit-details-marker {
   display: none;
 }
 
@@ -867,7 +869,8 @@ header .container nav .text-nav:hover {
   content: "\e313";
 }
 
-.curriculum-core[open] summary::after .curriculum-ai[open] summary::after {
+.curriculum-core[open] summary::after,
+.curriculum-ai[open] summary::after {
   transform: rotate(180deg);
 }
 
