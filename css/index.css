@@ -779,7 +779,6 @@ header .container nav .text-nav:hover {
   margin: 0;
   padding: 48px;
   border: 1px solid #0000001a;
-  position: relative;
   max-width: 100%;
   background-color: var(--color-white);
   scroll-snap-align: center;
@@ -1071,7 +1070,6 @@ details[open] summary::after {
   box-shadow:
     0 10px 15px -3px #0000001a,
     0 4px 6px -4px #0000001a;
-  position: absolute;
   top: 50%;
   width: 40px;
   height: 40px;
@@ -1080,25 +1078,38 @@ details[open] summary::after {
   border-radius: 50%;
 }
 
-.previous {
-  transform: translate(-48px, -50%);
+.next:hover,
+.previous:hover {
+  background-color: var(--color-primary);
+  color: white;
 }
 
-.next {
-  right: 0;
-  transform: translate(0, -50%);
+/* 각 슬라이드가 선택됐을떼 버튼 보여줌 */
+.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .previous-first,
+.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .next-first {
+  display: flex;
 }
 
-.curriculum-track:nth-child(2) :where(.next, .previous) {
+.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .previous-second,
+.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .next-second {
+  display: flex;
+}
+.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .previous-third,
+.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .next-third {
   display: flex;
 }
 
 /* 내비게이션 그룹 */
-.navigation-group {
+.curriculum-navigation {
   display: inline-flex;
   gap: 1.5rem;
   align-items: center;
+  margin-top: 24px;
   margin-inline: auto;
+}
+.navigation-group {
+  display: inline-flex;
+  gap: 1.5rem;
 }
 .navigation-group .material-icons-outlined {
   display: inline-flex;
@@ -1124,7 +1135,8 @@ details[open] summary::after {
 }
 
 .curriculum-track:has(.curriculum-slide:nth-child(1))
-  ~ .navigation-indicators
+  ~ .curriculum-navigation
+  .navigation-indicators
   > *:nth-child(1) {
   width: 3rem;
   background: var(--gradient-blue-green);
@@ -1132,7 +1144,8 @@ details[open] summary::after {
 }
 
 .curriculum-track:has(.curriculum-slide:nth-child(2):target)
-  ~ .navigation-indicators
+  ~ .curriculum-navigation
+  .navigation-indicators
   > *:nth-child(2) {
   width: 3rem;
   background: var(--gradient-yellow-orange);
@@ -1140,14 +1153,16 @@ details[open] summary::after {
 }
 
 .curriculum-track:has(.curriculum-slide:nth-child(3):target)
-  ~ .navigation-indicators
+  ~ .curriculum-navigation
+  .navigation-indicators
   > *:nth-child(3) {
   width: 3rem;
   background: var(--gradient-purple-pink);
   border-radius: 999px;
 }
 .curriculum-track:has(:target:not(:first-child))
-  ~ .navigation-indicators
+  ~ .curriculum-navigation
+  .navigation-indicators
   > *:first-child {
   width: 0.75rem;
   height: 0.75rem;
