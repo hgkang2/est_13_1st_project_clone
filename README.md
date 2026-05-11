@@ -15,6 +15,7 @@
 
 - 📑 [기획서 (Figma Slide)](https://www.figma.com/slides/CzlKmuxOolFBtCKjY7I2Cs)
 - 🎨 [디자인 원본 (Figma)](https://www.figma.com/design/cW7HTzL1lrRohmqDPyWXby/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EB%94%94%EC%9E%90%EC%9D%B8-%ED%98%84%EC%9E%AC-%EC%8A%A4%ED%86%A0%EB%A6%AC%EB%B3%B4%EB%93%9C-%EB%B0%8F-%EB%94%94%EC%9E%90%EC%9D%B8-?node-id=138-3672&t=oELWAzQ1IcYig6Ac-1)
+- 🌐[EST CAMP Frontend 14th Renewal Project](https://jeju-ratus.github.io/est_fe13_1st_project/)
 
 ---
 
@@ -36,13 +37,13 @@
 
 ## 1.2 팀원
 
-| 이름   | 역할      | 주요 담당 | GitHub                                            | 연락                    |
-| ------ | --------- | --------- | ------------------------------------------------- | ----------------------- |
-| 송민혁 | 팀장 · FE | 추후 수정 | [JEJU-Ratus](https://github.com/JEJU-Ratus)       | minhyeoksong3@gmail.com |
-| 안건욱 | FE        | 추후 수정 | [agw76638](https://github.com/agw76638)           | agw76638@gmail.com      |
-| 김기용 | FE        | 추후 수정 | [KIYONG00](https://github.com/KIYONG00)           | dhkdwk0292@gmail.com    |
-| 남윤동 | FE        | 추후 수정 | [dbsehd125-bot](https://github.com/dbsehd125-bot) | dbsehd125@gmail.com     |
-| 강형규 | FE        | 추후 수정 | [hgkang2](https://github.com/hgkang2)             | hgkang2hank@gmail.com   |
+| 이름   | 역할                           | 주요 담당                                                               | GitHub                                            | 연락                    |
+| ------ | ------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------- | ----------------------- |
+| 송민혁 | 팀장 · FE 리드 · 기획 · 디자인 | 전체 총괄<br>git repo 충돌 관리<br>Hero seciton<br>solution seciton<Br> | [JEJU-Ratus](https://github.com/JEJU-Ratus)       | minhyeoksong3@gmail.com |
+| 안건욱 | FE · 서브 · 기획 · 디자인      | 접근성 및 웹표준<br>Curriculum section                                  | [agw76638](https://github.com/agw76638)           | agw76638@gmail.com      |
+| 김기용 | FE · 기획 · 디자인             | header<br>problem section                                               | [KIYONG00](https://github.com/KIYONG00)           | dhkdwk0292@gmail.com    |
+| 남윤동 | FE · 기획 · 디자인             | CTA section<br>footer                                                   | [dbsehd125-bot](https://github.com/dbsehd125-bot) | dbsehd125@gmail.com     |
+| 강형규 | FE · 디자인                    | result section<br>review section                                        | [hgkang2](https://github.com/hgkang2)             | hgkang2hank@gmail.com   |
 
 ---
 
@@ -88,13 +89,11 @@ gantt
     axisFormat %m/%d
 
     section 기획
-    레퍼런스 분석 :done, a1, 2025-04-28, 2d
-    레퍼런스 발표 자료 제작 :done, a2, 2025-04-29, 1d
+    레퍼런스 분석 및 발표 자료 제작 :done, a1, 2025-04-28, 2d
 
     section 디자인
     웹 디자인 작업 :b1, 2025-04-30, 1d
-    디자인 분배 :b2, 2025-04-30, 7d
-    컨벤션 회의 :b3, 2025-04-30, 7d
+    디자인 분배 및 컨벤션 회의 :b2, 2025-04-30, 7d
 
     section 개발
     HTML/CSS 작업 진행 :active, c1, 2025-05-07, 5d
@@ -222,7 +221,7 @@ gantt
 
 ## 2.2 배포 URL
 
-- 추후에 추가
+- [EST CAMP Frontend 14th Renewal Project](https://jeju-ratus.github.io/est_fe13_1st_project/)
 
 ---
 
