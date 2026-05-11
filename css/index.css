@@ -2,11 +2,10 @@
 .header {
   align-content: center;
   box-shadow: 0px 4px 5px 0 rgba(0, 0, 0, 0.3);
-  position: fixed;
+  position: sticky;
   top: 0;
-  right: 0;
-  left: 0;
   z-index: 1000;
+  height: 64px;
   height: 64px;
   background: var(--color-white);
 }
@@ -47,8 +46,8 @@ header .container nav .text-nav:hover {
 /* ------------ hero ------------------------------ */
 /* 배경색 */
 .hero {
-  background: var(--gradient-bg-blue-green);
   position: relative;
+  background: var(--gradient-bg-blue-green);
 }
 /* 레이아웃 */
 .hero-wrapper {
@@ -85,7 +84,11 @@ header .container nav .text-nav:hover {
 /* hero - 설명 */
 .hero-proposal p {
   font-size: var(--body-l);
+  line-height: var(--base-unit);
   color: var(--color-gray);
+}
+.hero-proposal p:first-child {
+  margin-bottom: 11px;
 }
 /* hero - 우측 media 레이아웃 */
 .hero-media {
@@ -113,14 +116,16 @@ header .container nav .text-nav:hover {
 }
 .hero-stat-wrapper .stat-item {
   flex: 1;
+  border-radius: 14px;
 }
 /* 아래 화살표 */
 .arrow-down {
-  font-size: var(--body-s);
   position: absolute;
-  bottom: 36px;
+  bottom: calc(var(--base-unit) * 2);
   left: 50%;
+  font-size: var(--body-s);
   animation: arrow-bounce 1.5s infinite ease-in-out;
+  transform: translateX(-50%);
 }
 @keyframes arrow-bounce {
   0%,
@@ -132,21 +137,250 @@ header .container nav .text-nav:hover {
     transform: translateY(10px);
   }
 }
-/* ------------ problem ------------------------------ */
+/* ------hero - 태블릿----- */
+@media (max-width: 1160px) {
+  .hero-wrapper {
+    gap: calc(var(--base-unit) * 2);
+    flex-direction: column;
+  }
+  .hero-content {
+    align-items: center;
+  }
+  .hero-content h2 {
+    text-align: center;
+  }
+  .hero-proposal {
+    text-align: center;
+  }
+}
+@media (max-width: 768px) {
+  .arrow-down {
+    bottom: calc(var(--base-unit) * 1);
+  }
+}
+@media (max-width: 650px) {
+  .hero-content h2 {
+    font-size: clamp(var(--heading-xl), 11vw, var(--heading-3xl));
+    line-height: clamp(37px, 11vw, calc(var(--base-unit) * 3));
+  }
+  .hero-video iframe {
+    width: clamp(328px, 92vw, 600px);
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+}
+@media (max-width: 360px) {
+  .hero-content h2 {
+    font-size: var(--heading-xl);
+    line-height: 37px;
+  }
+  .badge-wrapper {
+    flex-direction: column;
+  }
+  .hero-video iframe {
+    width: 328px;
+    aspect-ratio: 16 / 9;
+  }
+  .hero-proposal p {
+    font-size: var(--body-s);
+  }
+  .mobile-br {
+    display: block;
+  }
+  .hero-content .btn {
+    align-self: stretch;
+    text-align: center;
+  }
+  .arrow-down {
+    bottom: calc(var(--base-unit) * 0.5);
+  }
+}
 
+/* ------------ problem ------------------------------ */
+.problem {
+  background-color: var(--color-white);
+}
+.problem-wrapper {
+  display: flex;
+  gap: 54px;
+  flex-direction: column;
+}
+.problem-content {
+  display: flex;
+  gap: 18px;
+  text-align: center;
+}
+.problem-content h2 span {
+  color: var(--color-primary);
+}
+.problem-content p {
+  font-size: var(--body-l);
+  font-weight: var(--weight-regular);
+  line-height: var(--base-unit);
+}
+/*problem-slide */
+.problem-slide {
+  overflow: hidden;
+}
+.problem-slide input {
+  display: none;
+}
+
+.problem-slide .slide {
+  display: flex;
+  gap: 28px;
+  width: 200%;
+}
+.problem-slide .slide .question {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+  padding: 25px 21px;
+  border: 1px solid #0000001a;
+  position: relative;
+  width: calc(100% / 3);
+  transition: transform 0.5s ease;
+  border-radius: 1.5rem;
+}
+.question .answer-box {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  background: linear-gradient(135deg, #eff6ff 0%, #f0fdf4 100%);
+  border-radius: 1.5rem;
+}
+.question .answer-box span {
+  color: var(--color-primary);
+}
+.question .answer-box .answer {
+  font-size: var(--body-s);
+  font-weight: var(--weight-regular);
+  line-height: var(--base-unit);
+}
+
+.question .answer-box .answer p:nth-child(1) {
+  color: var(--color-primary);
+}
+/* 슬라이드 */
+.problem-slide [id="slide01"]:checked ~ .slide .question {
+  transform: translateX(0);
+}
+.problem-slide [id="slide02"]:checked ~ .slide .question {
+  transform: translateX(calc(-100% + -28px));
+}
+.problem-slide [id="slide03"]:checked ~ .slide .question {
+  transform: translateX(calc(-200% + -56px));
+}
+.problem-slide [id="slide04"]:checked ~ .slide .question {
+  transform: translateX(calc(-300% + -84px));
+}
+/* 버튼 */
+.slide-button {
+  align-content: center;
+  position: absolute;
+  left: 50%;
+  height: 50px;
+  transform: translateX(-50%);
+}
+.slide-button label {
+  display: none;
+  align-content: center;
+  box-shadow:
+    0 10px 15px -3px #0000001a,
+    0 4px 6px -4px #0000001a;
+  position: absolute;
+  top: 7px;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  color: #000;
+  text-align: center;
+  border-radius: 50%;
+}
+.slide-button label:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+.slide-button .left {
+  transform: translateX(-200%);
+}
+.slide-button .right {
+  transform: translateX(100%);
+}
+
+.problem-slide [id="slide01"]:checked ~ .slide-button a label:nth-child(1) {
+  display: inline-block;
+}
+.problem-slide [id="slide02"]:checked ~ .slide-button a label:nth-child(2) {
+  display: inline-block;
+}
+.problem-slide [id="slide03"]:checked ~ .slide-button a label:nth-child(3) {
+  display: inline-block;
+}
+.problem-slide [id="slide04"]:checked ~ .slide-button a label:nth-child(4) {
+  display: inline-block;
+}
+/* nav */
+.problem-nav {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-inline: auto;
+}
+.problem-nav > * {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+.problem-slide
+  [id="slide01"]:checked
+  ~ .slide-button
+  .problem-nav
+  div:nth-child(1) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
+}
+.problem-slide
+  [id="slide02"]:checked
+  ~ .slide-button
+  .problem-nav
+  div:nth-child(2) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
+}
+.problem-slide
+  [id="slide03"]:checked
+  ~ .slide-button
+  .problem-nav
+  div:nth-child(3) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
+}
+.problem-slide
+  [id="slide04"]:checked
+  ~ .slide-button
+  .problem-nav
+  div:nth-child(4) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
+}
 /* ------------ solution ------------------------------ */
 /* 레이아웃 */
 .solution {
   display: flex;
-  flex-direction: column;
   gap: 29px;
+  flex-direction: column;
 }
 .solution header {
   display: flex;
+  gap: 29px;
   align-items: center;
   flex-direction: column;
   text-align: center;
-  gap: 29px;
 }
 /* 뱃지 */
 .solution-badge {
@@ -166,8 +400,8 @@ header .container nav .text-nav:hover {
 /* 카드 */
 .solution-card-container {
   display: flex;
+  gap: 24px;
   flex-direction: column;
-  gap: 25px;
 }
 .solution-card-wrapper {
   display: flex;
@@ -177,11 +411,11 @@ header .container nav .text-nav:hover {
   display: flex;
   gap: 16px;
   align-items: center;
+  flex: 1;
   padding: 24px;
   border: 1px solid var(--color-gray-20);
   box-sizing: border-box;
   border-radius: 16px;
-  flex: 1;
 }
 .solution-card-text {
   display: flex;
@@ -191,6 +425,26 @@ header .container nav .text-nav:hover {
 .solution-card-desc {
   font-size: var(--body-s);
   line-height: var(--base-unit);
+}
+@media (max-width: 768px) {
+  .solution-card-wrapper {
+    flex-direction: column;
+  }
+}
+@media (max-width: 360px) {
+  .solution,
+  .solution header,
+  .solution-card-container,
+  .solution-card-wrapper {
+    gap: 16px;
+  }
+  .solution header h3 {
+    font-size: var(--heading-xl);
+    line-height: 37px;
+  }
+  .solution-desc {
+    font-size: var(--body-s);
+  }
 }
 /* ------------ result ------------------------------ */
 .result {
@@ -499,13 +753,11 @@ header .container nav .text-nav:hover {
   display: flex;
   gap: 32px;
   flex-wrap: nowrap;
-  overflow-x: scroll;
+  overflow-x: hidden;
   width: 100%;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scrollbar-width: none;
   overscroll-behavior-x: contain;
-  scroll-marker-group: after;
 }
 
 /* 포커스 스타일
@@ -571,25 +823,8 @@ header .container nav .text-nav:hover {
 
 /* ── Details / Accordion base ───────────────── */
 /* details/summary 아코디언 기본
-   - `details` 요소를 커스텀 애니메이션으로 열고 닫기 위해 스타일을 적용
-   - `::details-content`는 브라우저별 구현 차이를 고려해 트랜지션을 설정 
-   - `interpolate-size: allow-keywords;`는 `block-size`를 `auto`로 애니매이션 가능하게 함*/
 details {
   overflow: hidden;
-  interpolate-size: allow-keywords;
-}
-
-/* `transition-behavior: allow-discrete;`는 `content-visibility`에 애니메이션 적용 가능하게 함 */
-details::details-content {
-  transition:
-    block-size 0.3s,
-    content-visibility 0.3s;
-  block-size: 0;
-  transition-behavior: allow-discrete;
-}
-
-details[open]::details-content {
-  block-size: auto;
 }
 
 /* summary(아코디언 제목)
@@ -808,121 +1043,116 @@ details[open] summary::after {
   font-size: var(--body-xl);
   color: transparent;
 }
+/* 버튼 작동 */
 
-/* ── Scroll Markers ─────────────────────────── */
-/* 스크롤 마커(진행 표시 점)
-   - CSS 스크롤 마커 기능을 이용해 현재 슬라이드 상태를 시각화
-   - 지원되지 않는 브라우저는 fallback 스타일을 제공 */
-.curriculum-track::scroll-marker-group {
-  display: inline-flex;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 64px;
-  margin-bottom: 16px;
-}
-
-.curriculum-slide::scroll-marker {
-  width: 12px;
-  height: 12px;
-  background-color: #ccc;
-  content: " ";
-  border-radius: 50%;
-}
-
-.curriculum-slide:first-child::scroll-marker {
-  anchor-name: --first-dot;
-}
-
-.curriculum-slide:last-child::scroll-marker {
-  anchor-name: --last-dot;
-}
-
-.curriculum-slide:nth-child(1)::scroll-marker:target-current {
-  width: 3rem;
-  background: var(--gradient-blue-cyan);
-  border-radius: 9999px;
-}
-
-.curriculum-slide:nth-child(2)::scroll-marker:target-current {
-  width: 3rem;
-  background: var(--gradient-yellow-orange);
-  border-radius: 9999px;
-}
-
-.curriculum-slide:nth-child(3)::scroll-marker:target-current {
-  width: 3rem;
-  background: var(--gradient-purple-pink);
-  border-radius: 9999px;
-}
-
-/* ── Scroll Buttons ─────────────────────────── */
-/* 스크롤 버튼(브라우저 지원 요소)
-   - 좌우 네비게이션 버튼을 위한 스타일 (스크롤 스냅 보완)
-   - 접근성: 포커스 시 아웃라인 표시 */
-.curriculum-track::scroll-button(*) {
-  display: inline-flex;
+.next,
+.previous {
+  display: none;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  border: none;
-  outline: none;
   box-shadow:
     0 10px 15px -3px #0000001a,
     0 4px 6px -4px #0000001a;
-  position: absolute;
   width: 40px;
   height: 40px;
-  background-color: var(--color-white);
-  font-family: "Material Icons";
+  background-color: white;
+  color: #000;
+  border-radius: 50%;
+}
+
+.next:hover,
+.previous:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* 각 슬라이드가 선택됐을떼 버튼 보여줌 */
+.curriculum-track:not(:has(:target)) ~ .curriculum-navigation .next-first,
+.curriculum-track:not(:has(:target)) ~ .curriculum-navigation .previous-first,
+.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .previous-first,
+.curriculum-track:has(#card-1:target) ~ .curriculum-navigation .next-first {
+  display: flex;
+}
+
+.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .previous-second,
+.curriculum-track:has(#card-2:target) ~ .curriculum-navigation .next-second {
+  display: flex;
+}
+.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .previous-third,
+.curriculum-track:has(#card-3:target) ~ .curriculum-navigation .next-third {
+  display: flex;
+}
+
+/* 내비게이션 그룹 */
+.curriculum-navigation {
+  display: inline-flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 24px;
+  margin-inline: auto;
+}
+.navigation-group {
+  display: inline-flex;
+  gap: 1.5rem;
+}
+.navigation-group .material-icons-outlined {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: white;
   cursor: pointer;
   border-radius: 50%;
 }
 
-.curriculum-track::scroll-button(left) {
-  content: "\e2ea";
-  position-area: center left;
-  position-anchor: --first-dot;
-  transform: translateX(-1.5rem);
+.navigation-indicators {
+  display: inline-flex;
+  gap: 0.5rem;
+  margin-inline: auto;
+}
+.navigation-indicators > * {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #ccc;
+  border-radius: 50%;
 }
 
-.curriculum-track::scroll-button(right) {
-  content: "\e5e1";
-  position-area: center right;
-  position-anchor: --last-dot;
-  transform: translateX(1.5rem);
+/* 슬라이드 선택됐을때 필모양으로 변경 */
+.curriculum-track:has(.curriculum-slide:nth-child(1))
+  ~ .curriculum-navigation
+  .navigation-indicators
+  > *:nth-child(1) {
+  width: 3rem;
+  background: var(--gradient-blue-green);
+  border-radius: 999px;
 }
 
-.curriculum-track::scroll-button(left):hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-.curriculum-track::scroll-button(right):hover {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-.curriculum-track::scroll-button(*):disabled:hover {
-  background-color: initial;
-  color: initial;
-  cursor: auto;
+.curriculum-track:has(.curriculum-slide:nth-child(2):target)
+  ~ .curriculum-navigation
+  .navigation-indicators
+  > *:nth-child(2) {
+  width: 3rem;
+  background: var(--gradient-yellow-orange);
+  border-radius: 999px;
 }
 
-.curriculum-track::scroll-button(*):focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 4px;
+.curriculum-track:has(.curriculum-slide:nth-child(3):target)
+  ~ .curriculum-navigation
+  .navigation-indicators
+  > *:nth-child(3) {
+  width: 3rem;
+  background: var(--gradient-purple-pink);
+  border-radius: 999px;
 }
-
-/* Fallback: 스크롤 마커 미지원 브라우저 처리
-   - `@supports`를 사용해 기능 미지원 시 스크롤바 스타일과 안내 문구 표시 */
-@supports not (scroll-marker-group: after) {
-  .curriculum-track {
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-primary) transparent;
-  }
-
-  .curriculum-header::after {
-    color: var(--color-primary);
-    content: "좌우로 스크롤하여 커리큘럼을 확인해보세요";
-  }
+.curriculum-track:has(:target:not(:first-child))
+  ~ .curriculum-navigation
+  .navigation-indicators
+  > *:first-child {
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #ccc;
+  border-radius: 50%;
 }
 
 /* ── Badge ──────────────────────────────────── */
@@ -967,74 +1197,74 @@ details[open] summary::after {
   padding:80px 0;
   color: var(--color-black);
   background-color: #ffffff;
+  color: var(--color-black);
   text-align: center;
 }
 .cta-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 45px;
+  align-items: center;
+  flex-direction: column;
 }
-.cta-heading {  
+.cta-heading {
   font-size: var(--heading-2xl);
   font-weight: var(--weight-bold);
   line-height: calc(var(--base-unit) * 2);
   color: var(--color-black);
 }
 
-.gradient-text{
+.gradient-text {
   background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
   background-clip: text;
   color: transparent;
-  }
+}
 
-.cta-desc{
-  color: var(--color-gray);
+.cta-desc {
   font-size: var(--body-l);
   line-height: 1.5;
+  color: var(--color-gray);
 }
 .cta-action {
   margin-top: 8px;
 }
 
 .cta-divider {
+  margin: 45px 0;
   border: none;
   border-top: 1px solid rgba(0, 0, 0, 0.12);
-  margin: 45px 0;
 }
 .cta-stats {
   display: flex;
   gap: 80px;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 .cta-stats .stat-item p:first-child {
+  background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
+  background-clip: text;
   font-size: var(--body-2xl);
   font-weight: var(--weight-bold);
   line-height: 40px;
-  background: linear-gradient(90deg, #155dfc 0%, #00c950 100%);
-  background-clip: text;
   color: transparent;
-
 }
 .stat-item p:last-child {
-  color: var(--color-gray);
   font-size: var(--body-s);
+  color: var(--color-gray);
   color: var(--color-gray);
 }
 
 /* ------------ footer ------------------------------ */
 .footer {
-  background-color: #1a1a1a;
-  color: var(--color-white);
   padding: 30px 0;
+  background-color: #1a1a1a;
   font-size: var(--body-s);
+  color: var(--color-white);
 }
 
 .footer-top {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 24px;
 }
 
@@ -1045,9 +1275,9 @@ details[open] summary::after {
 }
 
 .footer-links a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
   font-size: var(--body-s);
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
   transition: color 0.2s ease;
 }
 
@@ -1055,10 +1285,9 @@ details[open] summary::after {
   color: var(--color-white);
 }
 
-
 .footer-links .bar {
-  color: rgba(255, 255, 255, 0.3);
   margin: 0 5px;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .footer-social {
@@ -1068,29 +1297,27 @@ details[open] summary::after {
 }
 
 .footer-social a {
-  text-decoration: none;
-  color: rgba(255, 255, 255, 0.7);
   font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
   transition: color 0.3s ease;
 }
-
 
 .footer-social a:hover {
   color: var(--color-white);
 }
 
-
 .footer-info {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-info address,
 .footer-info p {
-  color: rgba(255, 255, 255, 0.5);
   font-size: var(--body-s);
-  line-height: 1.8;
   font-style: normal;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-info .copyright {
