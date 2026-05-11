@@ -36,13 +36,13 @@
 
 ## 1.2 팀원
 
-| 이름   | 역할      | 주요 담당 | GitHub                                            | 연락                    |
-| ------ | --------- | --------- | ------------------------------------------------- | ----------------------- |
-| 송민혁 | 팀장 · FE | 추후 수정 | [JEJU-Ratus](https://github.com/JEJU-Ratus)       | minhyeoksong3@gmail.com |
-| 안건욱 | FE        | 추후 수정 | [agw76638](https://github.com/agw76638)           | agw76638@gmail.com      |
-| 김기용 | FE        | 추후 수정 | [KIYONG00](https://github.com/KIYONG00)           | dhkdwk0292@gmail.com    |
-| 남윤동 | FE        | 추후 수정 | [dbsehd125-bot](https://github.com/dbsehd125-bot) | dbsehd125@gmail.com     |
-| 강형규 | FE        | 추후 수정 | [hgkang2](https://github.com/hgkang2)             | hgkang2hank@gmail.com   |
+| 이름   | 역할                           | 주요 담당                                                               | GitHub                                            | 연락                    |
+| ------ | ------------------------------ | ----------------------------------------------------------------------- | ------------------------------------------------- | ----------------------- |
+| 송민혁 | 팀장 · FE 리드 · 기획 · 디자인 | 전체 총괄<br>git repo 충돌 관리<br>Hero seciton<br>solution seciton<Br> | [JEJU-Ratus](https://github.com/JEJU-Ratus)       | minhyeoksong3@gmail.com |
+| 안건욱 | FE · 서브 · 기획 · 디자인      | 접근성 및 웹표준<br>Curriculum section                                  | [agw76638](https://github.com/agw76638)           | agw76638@gmail.com      |
+| 김기용 | FE · 기획 · 디자인             | header<br>problem section                                               | [KIYONG00](https://github.com/KIYONG00)           | dhkdwk0292@gmail.com    |
+| 남윤동 | FE · 기획 · 디자인             | CTA section<br>footer                                                   | [dbsehd125-bot](https://github.com/dbsehd125-bot) | dbsehd125@gmail.com     |
+| 강형규 | FE · 디자인                    | result section<br>review section                                        | [hgkang2](https://github.com/hgkang2)             | hgkang2hank@gmail.com   |
 
 ---
 
