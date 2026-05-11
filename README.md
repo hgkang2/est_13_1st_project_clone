@@ -290,4 +290,6 @@ est_fe13_1st_project/
 
 # 7. 미리보기
 
-추후 추가 예정
+<p align="center">
+  <img src="img/main-preview.png" alt="EST CAMP 리뉴얼 메인 페이지" width="100%">
+</p>
