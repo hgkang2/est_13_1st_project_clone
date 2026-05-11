@@ -707,7 +707,7 @@
 /* 별점 영역 */
 .review-rating {
   margin: 20px 20px 0; /* 내부 위치만 마진으로 고정 */
-  color: #ffb800; /* 포인트 컬러 */
+  color: #966200; /* 포인트 컬러 */
 }
 
 .review-rating span {
@@ -754,7 +754,7 @@
 
 .naver {
   background: #e7f9ed;
-  color: #03c75a;
+  color: #037c3a;
 }
 .kakao {
   background: #fff9e6;
@@ -762,7 +762,7 @@
 }
 .toss {
   background: #ebf3ff;
-  color: #0064ff;
+  color: #0062f5;
 }
 
 /* 하단 버튼 */
@@ -1013,7 +1013,7 @@
 
 .curriculum-ai-title .material-icons-outlined {
   font-size: 18px;
-  color: #ad46ff;
+  color: #9f29ff;
 }
 
 .curriculum-ai-list {
@@ -1036,7 +1036,7 @@
 
 .curriculum-ai-list li .material-icons-outlined {
   font-size: 16px;
-  color: #ad46ff;
+  color: #9f29ff;
 }
 
 /* ── Slide Visual (right column) ────────────── */
@@ -1389,7 +1389,7 @@
 
 .footer-links .bar {
   margin: 0 5px;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .footer-social {
@@ -1424,5 +1424,5 @@
 
 .footer-info .copyright {
   margin-top: 4px;
-  color: rgba(255, 255, 255, 0.35);
+  color: rgba(255, 255, 255, 0.5);
 }
