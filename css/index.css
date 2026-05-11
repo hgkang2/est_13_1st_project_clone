@@ -609,7 +609,7 @@
   display: flex;
   gap: 8px;
   justify-content: center;
-  flex-wrap: nowrap; /* 줄바꿈 금지 */
+  flex-wrap: wrap;
   max-width: none; /* 너비 제한 해제 */
   width: 100%;
 }
@@ -652,14 +652,11 @@
 }
 
 @media screen and (max-width: 640px) {
-  .result .result-grid {
-    grid-template-columns: 1fr;
+  .result .result-card .result-value {
+    font-size: 2.2rem;
   }
-  .result .result-card {
-    padding: 32px 20px;
-  }
-  .result .result-header {
-    margin-bottom: 32px;
+  .result .result-card .result-label {
+    font-size: 0.95rem;
   }
 }
 /* ------------ review ------------------------------ */
@@ -788,7 +785,7 @@
 }
 @media screen and (max-width: 768px) {
   .review-grid {
-    grid-size: 1fr;
+    grid-template-columns: 1fr;
   }
   .review-header {
     margin-bottom: var(--base-unit);
