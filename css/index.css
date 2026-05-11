@@ -964,7 +964,7 @@ details[open] summary::after {
 
 /* ------------ cta ------------------------------ */
 .cta{
-  padding:40px 0;
+  padding:80px 0;
   color: var(--color-black);
   background-color: #ffffff;
   text-align: center;
