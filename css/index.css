@@ -934,7 +934,7 @@
 
 .curriculum-core-title::after,
 .curriculum-ai-title::after {
-  font-family: "Material Icons";
+  font-family: "Material Icons Outlined";
   transition: transform 0.3s;
   content: "\e313";
 }
