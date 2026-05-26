@@ -1417,3 +1417,109 @@
   margin-top: 4px;
   color: rgba(255, 255, 255, 0.5);
 }
+/* 팝업 전체 배경 */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* 헤더보다 위에 뜨도록 설정 */
+}
+
+/* 팝업 모달창 본체 */
+.popup-content {
+  background-color: #ffffff;
+  padding: 28px 24px 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  box-sizing: border-box;
+}
+
+/* 팝업 타이틀 및 소개글 */
+.popup-body h2 {
+  font-size: 20px;
+  color: #111;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+.popup-body .popup-intro {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.4;
+  margin: 0 0 20px 0;
+}
+
+/* 프로젝트 상세 내용 리스트 스타일 */
+.project-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  background-color: #f8f9fa; /* 연한 배경으로 감싸서 강조 */
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.project-info-list li {
+  display: flex;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.project-info-list li:last-child {
+  margin-bottom: 0; /* 마지막 항목 여백 제거 */
+}
+.project-info-list li strong {
+  width: 80px; /* 항목 이름 너비 고정으로 줄맞춤 */
+  color: #333;
+  flex-shrink: 0;
+}
+.project-info-list li span {
+  color: #555;
+}
+
+/* 하단 버튼 영역 */
+.popup-footer {
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 오늘 하루 보지 않기 라벨 */
+.popup-today-label {
+  font-size: 14px;
+  color: #555;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  user-select: none;
+}
+
+/* 닫기 버튼 */
+.popup-close-btn {
+  background-color: #333; /* 프로젝트 메인 테마색이 있다면 변경 가능 */
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+.popup-close-btn:hover {
+  background-color: #111;
+}
+
+/* 자바스크립트 제어용 클래스 */
+.popup-overlay.hidden {
+  display: none !important;
+}

@@ -24,7 +24,33 @@
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/index.css" />
   </head>
+  <div id="main-popup" class="popup-overlay">
+    <div class="popup-content">
+      <div class="popup-body">
+        <h2>프로젝트 안내</h2>
+        <p class="popup-intro">
+          본 사이트는 팀 프로젝트 포트폴리오 사이트입니다.
+        </p>
 
+        <ul class="project-info-list">
+          <li><strong>과정명</strong> <span>오르미 프론트엔드 13기</span></li>
+          <li>
+            <strong>제작 기간</strong> <span>2026.04.30 ~ 2026.05.12</span>
+          </li>
+          <li><strong>개발 환경</strong> <span>HTML, CSS</span></li>
+          <li><strong>소스 관리</strong> <span>GitHub</span></li>
+        </ul>
+      </div>
+
+      <div class="popup-footer">
+        <label class="popup-today-label">
+          <input type="checkbox" id="today-close-checkbox" /> 오늘 하루 보지
+          않기
+        </label>
+        <button id="popup-close-btn" class="popup-close-btn">닫기</button>
+      </div>
+    </div>
+  </div>
   <body>
     <!-- header - 김기용 -->
     <header class="header">
@@ -969,5 +995,6 @@
         </div>
       </div>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>
